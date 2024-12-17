@@ -1,4 +1,5 @@
 import HolidayDeals from "./HolidayDeals";
+import HottestPicks from "./HottestPicks";
 import LicensedArtworks from "./LicensedArtworks";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <>
       <HolidayDeals />
       <LicensedArtworks />
+      <HottestPicks />
     </>
   );
 };
