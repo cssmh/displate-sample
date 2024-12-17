@@ -17,17 +17,16 @@ const Navbar = () => {
           : 39 s
         </p>
       </div>
-      <nav className="bg-white shadow-md py-4">
+      <nav className="bg-white border-b py-4">
         <div className="container mx-auto flex items-center justify-between px-4">
-          {/* Logo */}
           <div>
             <Link to="/" className="hover:text-blue-500">
               <img src={logo} alt="logo" />
             </Link>
-            <p className="text-sm font-semibold text-right text-gray-800">Metal Posters</p>
+            <p className="text-sm font-semibold text-right text-gray-800">
+              Metal Posters
+            </p>
           </div>
-
-          {/* Search Box */}
           <div className="flex-1 mx-4">
             <div className="relative w-full max-w-3xl mx-auto">
               <FiSearch
@@ -41,37 +40,67 @@ const Navbar = () => {
               />
             </div>
           </div>
-
-          {/* Right Side Icons and Links */}
           <div className="flex items-center space-x-6 text-gray-700">
             <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
               <FiGift size={20} />
               <span className="text-sm">Gifts</span>
             </div>
-
-            {/* Club */}
             <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
               <FiUser size={20} />
               <span className="text-sm">Club</span>
             </div>
-
-            {/* Wishlist */}
             <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
               <FiHeart size={20} />
               <span className="text-sm">Wishlist</span>
             </div>
-
-            {/* Cart */}
             <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
               <FiShoppingCart size={20} />
               <span className="text-sm">Cart</span>
             </div>
-
-            {/* Join (with User Icon) */}
             <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
               <FiUser size={20} />
               <span className="text-sm">Join</span>
             </div>
+          </div>
+        </div>
+        <div className="pt-4 border-t mt-1">
+          <div className="container mx-auto flex justify-center space-x-6 text-gray-700 text-sm font-medium">
+            <Link
+              to="/browse-posters"
+              className="hover:text-blue-500 transition duration-200"
+            >
+              Browse Posters
+            </Link>
+            <Link
+              to="/collections"
+              className="hover:text-blue-500 transition duration-200"
+            >
+              Collections
+            </Link>
+            <Link
+              to="/discover-brands"
+              className="hover:text-blue-500 transition duration-200"
+            >
+              Discover Brands
+            </Link>
+            <Link
+              to="/limited-displates"
+              className="hover:text-blue-500 transition duration-200"
+            >
+              Limited Displates
+            </Link>
+            <Link
+              to="/accessories-gifts"
+              className="hover:text-blue-500 transition duration-200"
+            >
+              Accessories & Gifts
+            </Link>
+            <Link
+              to="/whats-a-displate"
+              className="hover:text-blue-500 transition duration-200"
+            >
+              What&apos;s a Displate
+            </Link>
           </div>
         </div>
       </nav>
