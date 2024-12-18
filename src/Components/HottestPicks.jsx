@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiHeart } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const HottestPicks = () => {
   const [activeTab, setActiveTab] = useState("bestselling");
@@ -243,25 +244,24 @@ const HottestPicks = () => {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {getDataForTab().map((card) => (
-          <div
-            key={card.id}
-            className="relative bg-white shadow-lg overflow-hidden group cursor-pointer transition-transform transform hover:scale-105"
-          >
-            <img
-              src={card.imageUrl}
-              alt={`card-${card.id}`}
-              className="w-full h-60 object-cover group-hover:opacity-80 transition-opacity duration-300"
-            />
-            <span className="absolute top-2 left-2 bg-[#341bc9] text-white px-2 py-1 text-xs font-semibold">
-              Textra
-            </span>
-            <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <FiHeart
-                size={24}
-                className="text-white p-1 bg-gray-600 rounded-full"
+          <Link to={`/displate/${card.id}`} key={card.id}>
+            <div className="relative bg-white shadow-lg overflow-hidden group cursor-pointer transition-transform transform hover:scale-105">
+              <img
+                src={card.imageUrl}
+                alt={`card-${card.id}`}
+                className="w-full h-60 object-cover group-hover:opacity-80 transition-opacity duration-300"
               />
+              <span className="absolute top-2 left-2 bg-[#341bc9] text-white px-2 py-1 text-xs font-semibold">
+                Textra
+              </span>
+              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <FiHeart
+                  size={24}
+                  className="text-white p-1 bg-gray-600 rounded-full"
+                />
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex justify-center mt-10">
