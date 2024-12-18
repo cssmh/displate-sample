@@ -172,10 +172,10 @@ const PopularCollections = () => {
           Popular collections this week
         </h2>
       </div>
-      <div className="flex w-1/3 mx-auto bg-[#eceff4] py-1 rounded-full justify-center mb-6">
+      <div className="flex w-1/5 mx-auto bg-[#eceff4] py-1 rounded-full justify-center mb-6">
         <button
           onClick={() => handleTabChange("brands")}
-          className={`p-2 hover:text-[#1788ed] mx-2 font-medium ${
+          className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
             activeTab === "brands"
               ? "text-[#1788ed] bg-white px-3 rounded-full"
               : "text-[#4f565d]"
@@ -185,7 +185,7 @@ const PopularCollections = () => {
         </button>
         <button
           onClick={() => handleTabChange("artists")}
-          className={`p-2 hover:text-[#1788ed] mx-2 font-medium ${
+          className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
             activeTab === "artists"
               ? "text-[#1788ed] bg-white px-3 rounded-full"
               : "text-[#4f565d]"

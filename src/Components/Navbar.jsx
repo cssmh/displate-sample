@@ -11,6 +11,15 @@ import logo from "../assets/logo_dark.svg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMegaMenuVisible, setIsMegaMenuVisible] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsMegaMenuVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMegaMenuVisible(false);
+  };
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
@@ -63,12 +72,67 @@ const Navbar = () => {
           ) : (
             <div className="flex-1 mx-4 text-center">
               <div className="container mx-auto flex justify-center space-x-6 text-gray-700 text-sm font-medium">
-                <Link
-                  to="/browse-posters"
-                  className="hover:text-blue-500 transition duration-200"
+                <div
+                  className="relative"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  Browse Posters
-                </Link>
+                  <button className="hover:text-blue-500">
+                    Browse Posters
+                  </button>
+                  {isMegaMenuVisible && (
+                    <div className="absolute max-w-screen-lg w-screen bg-white shadow-lg p-6 grid grid-cols-4 gap-6">
+                      <div>
+                        <h3 className="font-semibold mb-2">Passion</h3>
+                        <ul>
+                          <li>Gaming</li>
+                          <li>Sport</li>
+                          <li>Anime & Manga</li>
+                          <li>Space</li>
+                          <li>Cars</li>
+                          <li>Fantasy</li>
+                          <li>Japanese & Asian</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-2">Nature & Travel</h3>
+                        <ul>
+                          <li>Maps</li>
+                          <li>Animals</li>
+                          <li>Nature</li>
+                          <li>Cityscapes</li>
+                          <li>Landscapes</li>
+                          <li>Travel</li>
+                          <li>Floral</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-2">Culture</h3>
+                        <ul>
+                          <li>Movies</li>
+                          <li>Music</li>
+                          <li>Retro</li>
+                          <li>Funny</li>
+                          <li>Comics</li>
+                          <li>Tv Shows</li>
+                          <li>Cartoons</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-2">Interior Design</h3>
+                        <ul>
+                          <li>Inspirational</li>
+                          <li>Vintage posters</li>
+                          <li>Minimalistic</li>
+                          <li>Pop art</li>
+                          <li>Text art</li>
+                          <li>Abstract</li>
+                          <li>Paintings</li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <Link
                   to="/collections"
                   className="hover:text-blue-500 transition duration-200"
@@ -134,12 +198,65 @@ const Navbar = () => {
         {!scrolled && (
           <div className="pt-4 border-t mt-1">
             <div className="container mx-auto flex justify-center space-x-6 text-gray-700 text-sm font-medium">
-              <Link
-                to="/browse-posters"
-                className="hover:text-blue-500 transition duration-200"
+              <div
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
-                Browse Posters
-              </Link>
+                <button className="hover:text-blue-500">Browse Posters</button>
+                {isMegaMenuVisible && (
+                  <div className="absolute max-w-screen-lg w-screen bg-white shadow-lg p-6 grid grid-cols-4 gap-6">
+                    <div>
+                      <h3 className="font-semibold mb-2">Passion</h3>
+                      <ul>
+                        <li>Gaming</li>
+                        <li>Sport</li>
+                        <li>Anime & Manga</li>
+                        <li>Space</li>
+                        <li>Cars</li>
+                        <li>Fantasy</li>
+                        <li>Japanese & Asian</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-2">Nature & Travel</h3>
+                      <ul>
+                        <li>Maps</li>
+                        <li>Animals</li>
+                        <li>Nature</li>
+                        <li>Cityscapes</li>
+                        <li>Landscapes</li>
+                        <li>Travel</li>
+                        <li>Floral</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-2">Culture</h3>
+                      <ul>
+                        <li>Movies</li>
+                        <li>Music</li>
+                        <li>Retro</li>
+                        <li>Funny</li>
+                        <li>Comics</li>
+                        <li>Tv Shows</li>
+                        <li>Cartoons</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-2">Interior Design</h3>
+                      <ul>
+                        <li>Inspirational</li>
+                        <li>Vintage posters</li>
+                        <li>Minimalistic</li>
+                        <li>Pop art</li>
+                        <li>Text art</li>
+                        <li>Abstract</li>
+                        <li>Paintings</li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
               <Link
                 to="/collections"
                 className="hover:text-blue-500 transition duration-200"

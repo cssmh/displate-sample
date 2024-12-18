@@ -213,7 +213,7 @@ const HottestPicks = () => {
       <div className="flex w-1/3 mx-auto bg-[#eceff4] py-1 rounded-full justify-center mb-6">
         <button
           onClick={() => handleTabChange("bestselling")}
-          className={`p-2 hover:text-[#1788ed] mx-2 font-medium ${
+          className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
             activeTab === "bestselling"
               ? "text-[#1788ed] bg-white px-3 rounded-full"
               : "text-[#4f565d]"
@@ -223,7 +223,7 @@ const HottestPicks = () => {
         </button>
         <button
           onClick={() => handleTabChange("trending")}
-          className={`p-2 hover:text-[#1788ed] mx-2 font-medium ${
+          className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
             activeTab === "trending"
               ? "text-[#1788ed] bg-white px-3 rounded-full"
               : "text-[#4f565d]"
@@ -233,7 +233,7 @@ const HottestPicks = () => {
         </button>
         <button
           onClick={() => handleTabChange("community")}
-          className={`p-2 hover:text-[#1788ed] text-sm mx-2 font-medium ${
+          className={`p-2 hover:text-[#1788ed] text-sm mx-2 font-medium transition-all duration-300 ease-in-out ${
             activeTab === "community"
               ? "text-[#1788ed] bg-white px-3 rounded-full"
               : "text-[#4f565d]"
