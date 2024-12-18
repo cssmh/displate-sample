@@ -1,6 +1,7 @@
 import PopularCollections from "../Pages/PopularCollections";
 import AwesomeSpaces from "./AwesomeSpaces";
 import Community from "./Community";
+import DisplatePosters from "./DisplatePosters";
 import Features from "./Features";
 import HolidayDeals from "./HolidayDeals";
 import HottestPicks from "./HottestPicks";
@@ -24,6 +25,7 @@ const Home = () => {
       <Newsletter />
       <Features />
       <PopularSearches />
+      <DisplatePosters />
     </>
   );
 };
