@@ -2,37 +2,43 @@ import retina from "../assets/avatarRetina.webp"
 const HolidayDeals = () => {
   const cardsData = [
     {
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://static.displate.com/brand/layout/7d8f9e17-a42a-4785-be8e-86be56cce4d2/logoStandard.png",
       title: "New World of Warcraft: Dragonflight collection",
       subtitle: "New Collection",
       description: "World Of Warcraft Avatar",
     },
     {
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://static.displate.com/brand/layout/7d8f9e17-a42a-4785-be8e-86be56cce4d2/logoStandard.png",
       title: "Cyberpunk 2077 Collection",
       subtitle: "Limited Edition",
       description: "Exclusive Cyberpunk Posters",
     },
     {
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://static.displate.com/brand/layout/7d8f9e17-a42a-4785-be8e-86be56cce4d2/logoStandard.png",
       title: "Marvel Superhero Collection",
       subtitle: "Best Seller",
       description: "Marvel Cinematic Universe Art",
     },
     {
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://static.displate.com/brand/layout/7d8f9e17-a42a-4785-be8e-86be56cce4d2/logoStandard.png",
       title: "Anime Classics Collection",
       subtitle: "Popular Picks",
       description: "Explore Classic Anime Art",
     },
     {
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://static.displate.com/brand/layout/7d8f9e17-a42a-4785-be8e-86be56cce4d2/logoStandard.png",
       title: "Star Wars Legacy Collection",
       subtitle: "Fan Favorite",
       description: "Iconic Star Wars Posters",
     },
     {
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://static.displate.com/brand/layout/7d8f9e17-a42a-4785-be8e-86be56cce4d2/logoStandard.png",
       title: "Nature & Landscape Collection",
       subtitle: "Peaceful Views",
       description: "Breathtaking Nature Scenes",
