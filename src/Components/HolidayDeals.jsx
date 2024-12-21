@@ -64,8 +64,8 @@ const HolidayDeals = () => {
   ];
 
   return (
-    <div className="flex max-w-7xl mx-auto bg-gray-50 my-6">
-      <div className="w-[70%] relative h-[500px]">
+    <div className="flex flex-col lg:flex-row max-w-7xl mx-auto bg-gray-50 my-4 md:my-6">
+      <div className="w-full lg:w-[70%] relative h-[500px]">
         <video
           autoPlay
           muted
@@ -98,7 +98,7 @@ const HolidayDeals = () => {
           </button>
         </div>
       </div>
-      <div className="w-[30%] h-[500px] overflow-hidden bg-white shadow-lg">
+      <div className="w-full lg:w-[30%] h-[500px] overflow-hidden bg-white shadow-lg">
         <div className="h-full overflow-y-auto">
           {cardsData.map((card, index) => (
             <div

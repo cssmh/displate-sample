@@ -6,6 +6,7 @@ import {
   FiShoppingCart,
   FiMenu,
   FiUser,
+  FiX,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo_dark.svg";
@@ -209,7 +210,7 @@ const Navbar = () => {
         </div>
       </nav>
       {!scrolled && (
-        <div className="py-4 border-b">
+        <div className="py-4 hidden lg:block border-b">
           <div className="container mx-auto flex justify-center space-x-6 text-gray-700 text-sm font-medium">
             <div
               className="relative"
@@ -303,6 +304,95 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      <div
+        className={`fixed top-0 left-0 h-full w-full bg-white shadow-lg transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 z-50`}
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b">
+          <Link to="/" onClick={toggleSidebar}>
+            <img src={logo} alt="logo" className="h-8" />
+          </Link>
+          <button onClick={toggleSidebar} className="text-gray-700 text-2xl">
+            <FiX />
+          </button>
+        </div>
+        <div className="flex flex-col space-y-6 p-6 text-gray-700">
+          <Link to="/" onClick={toggleSidebar} className="hover:text-blue-500">
+            Home
+          </Link>
+          <Link
+            to="/browse-posters"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            Browse Posters
+          </Link>
+          <Link
+            to="/collections"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            Collections
+          </Link>
+          <Link
+            to="/discover-brands"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            Discover Brands
+          </Link>
+          <Link
+            to="/limited-displates"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            Limited Displates
+          </Link>
+          <Link
+            to="/accessories-gifts"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            Accessories & Gifts
+          </Link>
+          <Link
+            to="/whats-a-displate"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            What&apos;s a Displate
+          </Link>
+          <Link
+            to="/displate-club"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            Displate Club
+          </Link>
+          <Link
+            to="/support"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            Support
+          </Link>
+          <Link
+            to="/about-us"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            About Us
+          </Link>
+          <Link
+            to="/sell-your-art"
+            onClick={toggleSidebar}
+            className="hover:text-blue-500"
+          >
+            Sell Your Art
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

@@ -206,11 +206,11 @@ const HottestPicks = () => {
   };
 
   return (
-    <div className="max-w-7xl bg-[#f6f7f8] mx-auto py-12">
-      <h2 className="text-4xl font-semibold text-center mb-8">
+    <div className="max-w-7xl bg-[#f6f7f8] mx-auto py-8 md:py-12">
+      <h2 className="text-2xl md:text-4xl font-semibold text-center mb-8">
         See the hottest picks
       </h2>
-      <div className="flex w-1/3 mx-auto bg-[#eceff4] py-1 rounded-full justify-center mb-6">
+      <div className="flex lg:w-1/3 mx-auto bg-[#eceff4] py-1 rounded-full justify-center mb-6">
         <button
           onClick={() => handleTabChange("bestselling")}
           className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
@@ -242,7 +242,7 @@ const HottestPicks = () => {
           Community Choice
         </button>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mx-2 md:mx-0">
         {getDataForTab().map((card) => (
           <Link to={`/displate/${card.id}`} key={card.id}>
             <div className="relative bg-white shadow-lg overflow-hidden group cursor-pointer transition-transform transform hover:scale-105">
