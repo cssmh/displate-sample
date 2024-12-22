@@ -129,7 +129,6 @@ const PopularCollections = () => {
     },
   ];
 
-  // Handle tab change
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -166,13 +165,13 @@ const PopularCollections = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-8">
+    <div className="max-w-7xl mx-auto py-5 md:py-8">
       <div className="text-center mb-6">
-        <h2 className="text-4xl font-bold text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           Popular collections this week
         </h2>
       </div>
-      <div className="flex w-1/5 mx-auto bg-[#eceff4] py-1 rounded-full justify-center mb-6">
+      <div className="flex lg:w-1/5 mx-auto bg-[#eceff4] py-1 rounded-full justify-center mb-6">
         <button
           onClick={() => handleTabChange("brands")}
           className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${

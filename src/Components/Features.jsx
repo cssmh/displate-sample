@@ -13,7 +13,7 @@ import clock from "../assets/return_clock.svg";
 const Features = () => {
   return (
     <div className="my-16">
-      <div className="max-w-7xl mx-auto px-4 grid gap-8 md:grid-cols-3">
+      <div className="max-w-7xl mx-auto px-4 grid gap-6 md:gap-8 md:grid-cols-3">
         <div className="p-7 bg-[#f6f7f8] rounded-lg shadow-lg flex flex-col items-center text-center">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Fast delivery

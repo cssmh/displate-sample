@@ -37,14 +37,14 @@ const data = [
 
 const SquidGame = () => {
   return (
-    <div className="my-10">
+    <div className="my-5 md:my-10">
       <div className="bg-black">
-        <div className="max-w-7xl mx-auto flex justify-between p-8">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between p-3 md:p-8">
           <div className="flex flex-col justify-center px-10 space-y-6">
-            <h2 className="text-lg text-[#8d9ba1] font-bold">
+            <h2 className="text-lg text-center lg:text-left text-[#8d9ba1] font-bold">
               Brand of the Month
             </h2>
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-col lg:flex-row items-center space-x-4">
               <img
                 src="https://static.displate.com/brand/layout/7a2f2e29-c967-460e-8b34-3103a9e6401e/avatarRetina.jpg"
                 alt="Squid Game Icon"
@@ -74,13 +74,13 @@ const SquidGame = () => {
               </div>
             </div>
           </div>
-          <div className="relative w-[600px] h-[340px] flex justify-center items-center mb-6">
+          <div className="lg:relative lg:w-[600px] lg:h-[340px] flex justify-center items-center mb-6">
             <video
               autoPlay
               loop
               muted
               controls
-              className="absolute top-[-65px] w-full object-cover rounded-lg"
+              className="lg:absolute lg:top-[-65px] w-full object-cover rounded-lg"
               src="https://www.w3schools.com/html/mov_bbb.mp4"
             >
               Your browser does not support the video tag.
@@ -96,7 +96,7 @@ const SquidGame = () => {
                 <img
                   src={card.imageUrl}
                   alt={`card-${card.id}`}
-                  className="w-full h-72 object-cover group-hover:opacity-80 transition-opacity duration-300"
+                  className="w-full lg:h-72 object-cover group-hover:opacity-80 transition-opacity duration-300"
                 />
                 <span className="absolute top-2 left-2 bg-[#341bc9] text-white px-2 py-1 text-xs font-semibold">
                   Textra

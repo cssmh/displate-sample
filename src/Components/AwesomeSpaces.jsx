@@ -1,8 +1,8 @@
 const AwesomeSpaces = () => {
   return (
-    <div className="container mx-auto p-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-800">
+    <div className="container mx-auto p-3 md:p-8">
+      <div className="text-center mb-6 md:mb-12">
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-800">
           Displates in your awesome spaces
         </h2>
       </div>
@@ -56,7 +56,7 @@ const AwesomeSpaces = () => {
             className="w-full h-[210px] object-cover rounded-lg"
           />
         </div>
-        <div className="col-span-1 -mt-16">
+        <div className="col-span-1 md:-mt-16">
           <img
             src="https://cms-static-pages-assets.displate.com/ugc29_40f6056190.png"
             alt="Space 8"
@@ -70,7 +70,7 @@ const AwesomeSpaces = () => {
             className="w-full h-[210px] object-cover rounded-lg"
           />
         </div>
-        <div className="col-span-1 -mt-16">
+        <div className="col-span-1 md:-mt-16">
           <img
             src="https://cms-static-pages-assets.displate.com/ugc35_6cadc70a66.jpg"
             alt="Space 10"

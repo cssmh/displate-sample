@@ -12,7 +12,7 @@ const Newsletter = () => {
           />
         </div>
         <div
-          className="w-full lg:w-1/2 bg-[#e3e9ff] p-8 lg:p-12 text-gray-800"
+          className="w-full lg:w-1/2 bg-[#e3e9ff] p-6 lg:p-12 text-gray-800"
           style={{ backgroundColor: "#e3e9ff" }}
         >
           <h2 className="text-3xl lg:text-4xl font-semibold leading-snug mb-4">

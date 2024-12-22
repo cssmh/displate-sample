@@ -5,8 +5,8 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useState } from "react";
 
 const LicensedArtworks = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); // Track the current slide index
-
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
   const cards = [
     {
       logo: "https://static.displate.com/brand/layout/799c0af2-b45a-4a77-9c1b-11ce50dcfd93/logoStandard1730726236.png",

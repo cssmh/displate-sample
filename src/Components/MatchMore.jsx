@@ -63,9 +63,9 @@ const MatchMore = () => {
   ];
 
   return (
-    <div className="my-16">
+    <div className="my-8 md:my-16">
       <div className="max-w-7xl mx-auto text-center px-4">
-        <h2 className="text-4xl font-semibold text-gray-800 mb-8">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-8">
           Still looking for a match?
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">

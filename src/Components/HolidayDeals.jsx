@@ -87,7 +87,7 @@ const HolidayDeals = () => {
           <p className="text-red-500 bg-red-200 text-xs rounded-md p-1 my-2">
             PROMO
           </p>
-          <h2 className="text-white text-5xl font-bold mb-2">
+          <h2 className="text-white text-3xl md:text-5xl font-bold mb-2">
             Holiday Deals Unlocked!
           </h2>
           <p className="text-white text-5xl font-bold mb-4">

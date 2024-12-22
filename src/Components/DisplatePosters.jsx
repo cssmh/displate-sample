@@ -1,6 +1,6 @@
 const DisplatePosters = () => {
   return (
-    <div className="max-w-4xl mx-auto my-12 px-4 text-gray-800 space-y-8">
+    <div className="max-w-4xl mx-auto my-6 md:my-12 px-5 md:px-4 text-gray-800 space-y-8">
       <div>
         <h1 className="text-xl md:text-3xl font-semibold mb-4">
           Displate Metal Posters – Wall Art That Gets You

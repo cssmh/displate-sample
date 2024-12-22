@@ -179,7 +179,7 @@ const Navbar = () => {
               </div>
             </div>
           )}
-          <div className="flex items-center space-x-6 text-gray-700">
+          <div className="flex items-center space-x-2 md:space-x-6 text-gray-700">
             {scrolled && (
               <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
                 <FiSearch size={20} />

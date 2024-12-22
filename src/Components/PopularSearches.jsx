@@ -7,8 +7,8 @@ const PopularSearches = () => {
   const toggleShowMore = () => setShowMore(!showMore);
 
   return (
-    <div className="py-12 px-4">
-      <div className="border-b pb-2 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div className="py-5 md:py-12 px-5">
+      <div className="border-b pb-2 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <h2 className="text-lg font-bold text-gray-800 mb-4">Categories</h2>
           <ul className="space-y-2 text-gray-600">

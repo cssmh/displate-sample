@@ -42,7 +42,6 @@ const Footer = () => {
               <li>Privacy policy</li>
             </ul>
           </div>
-          {/* About Section */}
           <div className="flex-1 min-w-[200px]">
             <h3 className="font-semibold text-lg mb-4">About</h3>
             <ul className="space-y-2 text-gray-600">
@@ -53,7 +52,6 @@ const Footer = () => {
               <li>Career</li>
             </ul>
           </div>
-          {/* Earn with Displate Section */}
           <div className="flex-1 min-w-[200px]">
             <h3 className="font-semibold text-lg mb-4">Earn with Displate</h3>
             <ul className="space-y-2 text-gray-600">
@@ -65,7 +63,7 @@ const Footer = () => {
               <li>Gifts inspirations</li>
             </ul>
           </div>
-          <div className="">
+          <div>
             <h3 className="font-semibold text-lg mb-4">Find us</h3>
             <div className="grid grid-cols-3 gap-4 text-gray-600">
               <a
@@ -110,7 +108,6 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          {/* Partners Section */}
           <div className="flex-[2] min-w-[200px]">
             <h3 className="font-semibold text-lg mb-4">Partners</h3>
             <div className="grid grid-cols-5">
@@ -168,7 +165,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mt-16 mb-4">
               Secure payments
             </h3>
-            <div className="flex gap-2">
+            <div className="grid grid-cols-4 md:grid-cols-7 gap-2">
               <img src={visa} alt="Visa" className="w-12 h-10 object-contain" />
               <img
                 src={mastercard}
