@@ -2,22 +2,14 @@ import { useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronDown, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Newsletter from "../Components/Newsletter";
+import CategoryModal from "./CategoryModal";
 
 const BrowseCollections = () => {
-  const categories = [
-    "All",
-    "Trending",
-    "Gaming",
-    "Fantasy",
-    "TV Shows",
-    "Movies",
-    "Comics",
-    "Music",
-    "Sport",
-    "Anime & Manga",
-  ];
+  const [isOpen, setIsOpen] = useState(false);
+  const closeModal = () => setIsOpen(false);
+
   const sections = [
     "Trending",
     "Gaming",
@@ -78,7 +70,9 @@ const BrowseCollections = () => {
 
     return (
       <div className="relative my-8">
-        <h2 className="text-xl md:text-3xl font-semibold mb-4">{sectionTitle}</h2>
+        <h2 className="text-xl md:text-3xl font-semibold mb-4">
+          {sectionTitle}
+        </h2>
         {currentSlide > 0 && (
           <button
             onClick={() => sliderRef.current.slickPrev()}
@@ -101,7 +95,9 @@ const BrowseCollections = () => {
                     className="w-10 h-10 rounded-full mr-3"
                   />
                   <div>
-                    <h3 className="font-semibold text-lg text-left">{design.title}</h3>
+                    <h3 className="font-semibold text-lg text-left">
+                      {design.title}
+                    </h3>
                     <p className="text-sm text-gray-600 text-left">
                       {design.subtitle}
                     </p>
@@ -163,11 +159,13 @@ const BrowseCollections = () => {
         </h1>
         <div className="flex items-center">
           <span className="mr-2 font-medium">Category:</span>
-          <select className="border rounded-md p-2">
-            {categories.map((category) => (
-              <option key={category}>{category}</option>
-            ))}
-          </select>
+          <button
+            onClick={() => setIsOpen(true)}
+            className="flex items-center justify-between w-[200px] border rounded-md px-3 py-2 text-sm font-medium bg-white shadow-sm focus:outline-none"
+          >
+            <span className="mr-2">All</span>
+            <FiChevronDown size={16} />
+          </button>
         </div>
       </div>
       {sections.map((section) => (
@@ -202,8 +200,8 @@ const BrowseCollections = () => {
           <FiChevronRight size={24} />
         </button>
       </div>
-
       <Newsletter />
+      <CategoryModal isOpen={isOpen} closeModal={closeModal} />
     </div>
   );
 };
