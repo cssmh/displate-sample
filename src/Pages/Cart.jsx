@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const sliderRef = useRef(null);
@@ -125,9 +126,12 @@ const Cart = () => {
         <p className="text-2xl md:text-3xl mb-6">
           Find yourself a <span className="font-semibold">Displate!</span>
         </p>
-        <button className="bg-[#1185ed] text-white px-4 font-semibold py-3 rounded-md text-lg transition duration-200">
+        <Link
+          to="/browse-collections"
+          className="bg-[#1185ed] text-white px-4 font-semibold py-3 rounded-md text-lg transition duration-200"
+        >
           Shop Now
-        </button>
+        </Link>
       </div>
       <div className="w-full">
         <h2 className="text-center text-2xl md:text-4xl font-semibold mb-8">
