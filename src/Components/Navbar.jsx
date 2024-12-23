@@ -199,8 +199,10 @@ const Navbar = () => {
               <span className="text-sm">Wishlist</span>
             </div>
             <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
-              <FiShoppingCart size={20} />
-              <span className="text-sm">Cart</span>
+              <Link to="/cart">
+                <FiShoppingCart size={20} />
+                <span className="text-sm">Cart</span>
+              </Link>
             </div>
             <div className="hidden md:flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
               <FiUser size={20} />
