@@ -78,7 +78,7 @@ const BrowseCollections = () => {
 
     return (
       <div className="relative my-8">
-        <h2 className="text-xl font-semibold mb-4">{sectionTitle}</h2>
+        <h2 className="text-xl md:text-3xl font-semibold mb-4">{sectionTitle}</h2>
         {currentSlide > 0 && (
           <button
             onClick={() => sliderRef.current.slickPrev()}
@@ -101,7 +101,7 @@ const BrowseCollections = () => {
                     className="w-10 h-10 rounded-full mr-3"
                   />
                   <div>
-                    <h3 className="font-bold text-left">{design.title}</h3>
+                    <h3 className="font-semibold text-lg text-left">{design.title}</h3>
                     <p className="text-sm text-gray-600 text-left">
                       {design.subtitle}
                     </p>
@@ -133,10 +133,34 @@ const BrowseCollections = () => {
     );
   };
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 5;
+
+  const handlePageChange = (e) => {
+    const value = parseInt(e.target.value);
+    if (value >= 1 && value <= totalPages) {
+      setCurrentPage(value);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Browse Collections</h1>
+        <h1 className="text-2xl md:text-4xl font-semibold">
+          Browse Collections
+        </h1>
         <div className="flex items-center">
           <span className="mr-2 font-medium">Category:</span>
           <select className="border rounded-md p-2">
@@ -153,6 +177,32 @@ const BrowseCollections = () => {
           data={sampleDesigns}
         />
       ))}
+      <div className="flex justify-center items-center mt-8 space-x-4">
+        <button
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+          className="p-2 rounded-full border shadow-lg disabled:opacity-50"
+        >
+          <FiChevronLeft size={24} />
+        </button>
+        <input
+          type="number"
+          value={currentPage}
+          onChange={handlePageChange}
+          min={1}
+          max={totalPages}
+          className="w-16 text-center border rounded-md p-2"
+        />
+        <span>of {totalPages}</span>
+        <button
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          className="p-2 rounded-full border shadow-lg disabled:opacity-50"
+        >
+          <FiChevronRight size={24} />
+        </button>
+      </div>
+
       <Newsletter />
     </div>
   );
