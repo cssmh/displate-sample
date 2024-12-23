@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const sliderRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  console.log(currentSlide);
 
   const sliderSettings = {
     infinite: false,

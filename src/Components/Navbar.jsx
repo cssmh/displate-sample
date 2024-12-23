@@ -9,12 +9,18 @@ import {
   FiX,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import Typewriter from "typewriter-effect";
 import logo from "../assets/logo_dark.svg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMegaMenuVisible, setIsMegaMenuVisible] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
   const handleMouseEnter = () => {
     setIsMegaMenuVisible(true);
@@ -77,9 +83,30 @@ const Navbar = () => {
                 />
                 <input
                   type="text"
-                  placeholder="Search for posters..."
+                  value={inputValue}
+                  onChange={handleInputChange}
                   className="w-full border border-black rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder=""
                 />
+                {!inputValue && (
+                  <span className="absolute left-12 top-1/2 transform -translate-y-1/2 flex items-center text-black pointer-events-none">
+                    <span>Search for&nbsp;</span>
+                    <Typewriter
+                      options={{
+                        strings: [
+                          "posters",
+                          "metal posters",
+                          "design",
+                          "artworks",
+                          "brands",
+                          "Displate",
+                        ],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </span>
+                )}
               </div>
             </div>
           ) : (
