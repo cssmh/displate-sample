@@ -11,13 +11,15 @@ import {
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import logo from "../assets/logo_dark.svg";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMegaMenuVisible, setIsMegaMenuVisible] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [isSubSidebarOpen, setSubSidebarOpen] = useState(false);
+  const toggleSubSidebar = () => setSubSidebarOpen(!isSubSidebarOpen);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -378,15 +380,14 @@ const Navbar = () => {
             { path: "/limited-displates", label: "Limited Displates" },
             { path: "/accessories-gifts", label: "Accessories & Gifts" },
           ].map((route) => (
-            <Link
+            <button
               key={route.path}
-              to={route.path}
-              onClick={toggleSidebar}
-              className="flex items-center font-medium justify-between border-b-2 pb-3"
+              onClick={toggleSubSidebar}
+              className="flex items-center justify-between border-b-2 pb-3 font-medium w-full text-left"
             >
               {route.label}
               <IoIosArrowForward className="text-2xl text-gray-500" />
-            </Link>
+            </button>
           ))}
           <Link
             to="/whats-a-displate"
@@ -406,15 +407,14 @@ const Navbar = () => {
             { path: "/support", label: "Support" },
             { path: "/about-us", label: "About Us" },
           ].map((route) => (
-            <Link
+            <button
               key={route.path}
-              to={route.path}
-              onClick={toggleSidebar}
-              className="flex items-center font-medium justify-between border-b-2 pb-3"
+              onClick={toggleSubSidebar}
+              className="flex items-center justify-between border-b-2 pb-3 font-medium w-full text-left"
             >
               {route.label}
               <IoIosArrowForward className="text-2xl text-gray-500" />
-            </Link>
+            </button>
           ))}
           <Link
             to="/sell-your-art"
@@ -423,6 +423,65 @@ const Navbar = () => {
           >
             Sell Your Art
           </Link>
+        </div>
+      </div>
+      <div
+        className={`fixed top-0 left-0 h-full w-full bg-white shadow-lg transform ${
+          isSubSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 z-50 overflow-y-auto`}
+      >
+        <div className="sticky top-0 flex items-center justify-between p-4 bg-white z-10">
+          <button onClick={toggleSubSidebar} className="text-gray-700 text-2xl">
+            <IoIosArrowBack />
+          </button>
+          <Link to="/" className="text-center">
+            <img src={logo} alt="logo" className="h-8" />
+            <p className="text-sm font-semibold text-gray-800">Metal Posters</p>
+          </Link>
+          <button onClick={toggleSubSidebar} className="text-gray-700 text-2xl">
+            <FiX />
+          </button>
+        </div>
+        <div className="py-4 text-gray-700">
+          <div className="flex flex-col space-y-3 px-4 text-gray-700 mb-2">
+            <p className="border-b-2 font-bold py-2">Passion</p>
+            {[
+              { path: "/gaming", label: "Gaming" },
+              { path: "/sports", label: "Sports" },
+              { path: "/anime", label: "Anime & Manga" },
+              { path: "/limited-displates", label: "Space" },
+              { path: "/cars", label: "Cars" },
+              { path: "/fantasy", label: "Fantasy" },
+            ].map((route) => (
+              <Link
+                key={route.path}
+                to={route.path}
+                className="flex items-center justify-between border-b-2 pb-3 font-medium w-full text-left"
+              >
+                {route.label}
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-col space-y-3 px-4 text-gray-700 mb-8">
+            <p className="border-b-2 font-bold py-2">Nature & Travel</p>
+            {[
+              { path: "/Maps", label: "Maps" },
+              { path: "/Animals", label: "Animals" },
+              { path: "/Nature", label: "Nature" },
+              { path: "/cityscapes", label: "Cityscapes" },
+              { path: "/Landscapes", label: "Landscapes" },
+              { path: "/Travel", label: "Travel" },
+              { path: "/floral", label: "Floral" },
+            ].map((route) => (
+              <Link
+                key={route.path}
+                to={route.path}
+                className="flex items-center justify-between border-b-2 pb-3 font-medium w-full text-left"
+              >
+                {route.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>
