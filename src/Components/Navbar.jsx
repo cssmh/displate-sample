@@ -7,11 +7,11 @@ import {
   FiMenu,
   FiUser,
   FiX,
-  FiArrowRight,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import logo from "../assets/logo_dark.svg";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -337,34 +337,37 @@ const Navbar = () => {
       <div
         className={`fixed top-0 left-0 h-full w-full bg-white shadow-lg transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 z-50`}
+        } transition-transform duration-300 z-50 overflow-y-auto`}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b">
+        <div className="sticky top-0 flex items-center justify-between p-4 bg-white z-10">
           <Link to="/" onClick={toggleSidebar}>
-            <img src={logo} alt="logo" className="h-8" />
+            <img src={logo} alt="logo" className="h-8 mt-3" />
+            <p className="text-sm font-semibold text-right text-gray-800">
+              Metal Posters
+            </p>
           </Link>
           <button onClick={toggleSidebar} className="text-gray-700 text-2xl">
             <FiX />
           </button>
         </div>
-        <div className="flex items-center px-6 py-4 border-b text-gray-700">
+        <div className="flex items-center p-4 border-b-2 text-gray-700">
           <FiUser className="text-xl mr-2" />
           <span className="font-medium">
             Hello!{" "}
-            <Link to="/login" className="text-blue-500">
+            <Link to="/login" className="text-blue-500 font-semibold">
               Log in
             </Link>{" "}
             or{" "}
-            <Link to="/signup" className="text-blue-500">
+            <Link to="/signup" className="text-blue-500 font-semibold">
               Sign up
             </Link>
           </span>
         </div>
-        <div className="flex flex-col space-y-6 p-6 text-gray-700">
+        <div className="flex flex-col space-y-3 px-4 text-gray-700 mb-8">
           <Link
             to="/"
             onClick={toggleSidebar}
-            className="border-b py-2 hover:text-blue-500"
+            className="border-b-2 py-2 font-medium"
           >
             Home
           </Link>
@@ -374,6 +377,32 @@ const Navbar = () => {
             { path: "/discover-brands", label: "Discover Brands" },
             { path: "/limited-displates", label: "Limited Displates" },
             { path: "/accessories-gifts", label: "Accessories & Gifts" },
+          ].map((route) => (
+            <Link
+              key={route.path}
+              to={route.path}
+              onClick={toggleSidebar}
+              className="flex items-center font-medium justify-between border-b-2 pb-3"
+            >
+              {route.label}
+              <IoIosArrowForward className="text-2xl text-gray-500" />
+            </Link>
+          ))}
+          <Link
+            to="/whats-a-displate"
+            onClick={toggleSidebar}
+            className="border-b-2 pb-3 font-medium"
+          >
+            What&apos;s a Displate
+          </Link>
+          <Link
+            to="/displate-club"
+            onClick={toggleSidebar}
+            className="border-b-2 pb-3 font-medium"
+          >
+            Displate Club
+          </Link>
+          {[
             { path: "/support", label: "Support" },
             { path: "/about-us", label: "About Us" },
           ].map((route) => (
@@ -381,30 +410,16 @@ const Navbar = () => {
               key={route.path}
               to={route.path}
               onClick={toggleSidebar}
-              className="flex items-center justify-between border-b py-2 hover:text-blue-500"
+              className="flex items-center font-medium justify-between border-b-2 pb-3"
             >
               {route.label}
-              <FiArrowRight className="text-xl text-gray-500" />
+              <IoIosArrowForward className="text-2xl text-gray-500" />
             </Link>
           ))}
           <Link
-            to="/whats-a-displate"
-            onClick={toggleSidebar}
-            className="border-b py-2 hover:text-blue-500"
-          >
-            What&apos;s a Displate
-          </Link>
-          <Link
-            to="/displate-club"
-            onClick={toggleSidebar}
-            className="border-b py-2 hover:text-blue-500"
-          >
-            Displate Club
-          </Link>
-          <Link
             to="/sell-your-art"
             onClick={toggleSidebar}
-            className="border-b py-2 hover:text-blue-500"
+            className="border-b-2 pb-3 font-medium"
           >
             Sell Your Art
           </Link>
