@@ -124,54 +124,81 @@ const Navbar = () => {
                     Browse Posters
                   </button>
                   {isMegaMenuVisible && (
-                    <div className="absolute max-w-screen-lg w-screen bg-white shadow-lg p-6 grid grid-cols-4 gap-6">
-                      <div>
-                        <h3 className="font-semibold mb-2">Passion</h3>
-                        <ul>
-                          <li>Gaming</li>
-                          <li>Sport</li>
-                          <li>Anime & Manga</li>
-                          <li>Space</li>
-                          <li>Cars</li>
-                          <li>Fantasy</li>
-                          <li>Japanese & Asian</li>
+                    <div className="fixed text-left top-[118px] left-0 w-full bg-white shadow-2xl p-12 grid grid-cols-5 gap-6">
+                      <div className="text-base">
+                        <h3 className="font-bold mb-2">Passion</h3>
+                        <ul className="space-y-2 text-black">
+                          <li className="font-normal">Gaming</li>
+                          <li className="font-normal">Sport</li>
+                          <li className="font-normal">Anime & Manga</li>
+                          <li className="font-normal">Space</li>
+                          <li className="font-normal">Cars</li>
+                          <li className="font-normal">Fantasy</li>
+                          <li className="font-normal">Japanese & Asian</li>
                         </ul>
                       </div>
-                      <div>
-                        <h3 className="font-semibold mb-2">Nature & Travel</h3>
-                        <ul>
-                          <li>Maps</li>
-                          <li>Animals</li>
-                          <li>Nature</li>
-                          <li>Cityscapes</li>
-                          <li>Landscapes</li>
-                          <li>Travel</li>
-                          <li>Floral</li>
+                      <div className="text-base">
+                        <h3 className="font-bold mb-2">Nature & Travel</h3>
+                        <ul className="space-y-2 text-black">
+                          <li className="font-normal">Maps</li>
+                          <li className="font-normal">Animals</li>
+                          <li className="font-normal">Nature</li>
+                          <li className="font-normal">Cityscapes</li>
+                          <li className="font-normal">Landscapes</li>
+                          <li className="font-normal">Travel</li>
+                          <li className="font-normal">Floral</li>
                         </ul>
                       </div>
-                      <div>
-                        <h3 className="font-semibold mb-2">Culture</h3>
-                        <ul>
-                          <li>Movies</li>
-                          <li>Music</li>
-                          <li>Retro</li>
-                          <li>Funny</li>
-                          <li>Comics</li>
-                          <li>Tv Shows</li>
-                          <li>Cartoons</li>
+                      <div className="text-base">
+                        <h3 className="font-bold mb-2">Culture</h3>
+                        <ul className="space-y-2 text-black">
+                          <li className="font-normal">Movies</li>
+                          <li className="font-normal">Music</li>
+                          <li className="font-normal">Retro</li>
+                          <li className="font-normal">Funny</li>
+                          <li className="font-normal">Comics</li>
+                          <li className="font-normal">Tv Shows</li>
+                          <li className="font-normal">Cartoons</li>
                         </ul>
                       </div>
-                      <div>
-                        <h3 className="font-semibold mb-2">Interior Design</h3>
-                        <ul>
-                          <li>Inspirational</li>
-                          <li>Vintage posters</li>
-                          <li>Minimalistic</li>
-                          <li>Pop art</li>
-                          <li>Text art</li>
-                          <li>Abstract</li>
-                          <li>Paintings</li>
+                      <div className="text-base">
+                        <h3 className="font-bold mb-2">Interior Design</h3>
+                        <ul className="space-y-2 text-black">
+                          <li className="font-normal">Inspirational</li>
+                          <li className="font-normal">Vintage posters</li>
+                          <li className="font-normal">Minimalistic</li>
+                          <li className="font-normal">Pop art</li>
+                          <li className="font-normal">Text art</li>
+                          <li className="font-normal">Abstract</li>
+                          <li className="font-normal">Paintings</li>
                         </ul>
+                      </div>
+                      <div className="text-white bg-gradient-to-r from-blue-500 to-blue-300 p-8">
+                        <h1 className="text-3xl font-bold">Displate Textra</h1>
+                        <p className="text-sm">3D-textured metal posters</p>
+                        <p className="flex items-start space-x-2">
+                          <span className="text-green-400">✔</span>
+                          <span className="text-sm">
+                            Selective matte & gloss finish
+                          </span>
+                        </p>
+                        <li className="flex items-start space-x-2">
+                          <span className="text-green-400 font-bold">✔</span>
+                          <span>Outstanding 3D details</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <span className="text-green-400 font-bold">✔</span>
+                          <span>Added depth and texture</span>
+                        </li>
+                        <div className="flex justify-between items-center">
+                          <li className="flex items-start space-x-2">
+                            <span className="text-green-400 font-bold">✔</span>
+                            <span>Selected art now in size L!</span>
+                          </li>
+                          <button className="bg-white text-black font-semibold py-2 px-4 rounded shadow hover:bg-gray-100">
+                            See More
+                          </button>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -251,53 +278,56 @@ const Navbar = () => {
             >
               <button className="hover:text-blue-500">Browse Posters</button>
               {isMegaMenuVisible && (
-                <div className="absolute max-w-screen-lg w-screen bg-white shadow-lg p-6 grid grid-cols-4 gap-6">
+                <div
+                  className="fixed top-44 left-0 w-full bg-white shadow-lg p-6 grid grid-cols-4 gap-6"
+                  style={{ zIndex: 50 }}
+                >
                   <div>
                     <h3 className="font-semibold mb-2">Passion</h3>
-                    <ul>
-                      <li>Gaming</li>
-                      <li>Sport</li>
-                      <li>Anime & Manga</li>
-                      <li>Space</li>
-                      <li>Cars</li>
-                      <li>Fantasy</li>
-                      <li>Japanese & Asian</li>
+                    <ul className="space-y-2 text-black">
+                      <li className="font-normal">Gaming</li>
+                      <li className="font-normal">Sport</li>
+                      <li className="font-normal">Anime & Manga</li>
+                      <li className="font-normal">Space</li>
+                      <li className="font-normal">Cars</li>
+                      <li className="font-normal">Fantasy</li>
+                      <li className="font-normal">Japanese & Asian</li>
                     </ul>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Nature & Travel</h3>
-                    <ul>
-                      <li>Maps</li>
-                      <li>Animals</li>
-                      <li>Nature</li>
-                      <li>Cityscapes</li>
-                      <li>Landscapes</li>
-                      <li>Travel</li>
-                      <li>Floral</li>
+                    <ul className="space-y-2 text-black">
+                      <li className="font-normal">Maps</li>
+                      <li className="font-normal">Animals</li>
+                      <li className="font-normal">Nature</li>
+                      <li className="font-normal">Cityscapes</li>
+                      <li className="font-normal">Landscapes</li>
+                      <li className="font-normal">Travel</li>
+                      <li className="font-normal">Floral</li>
                     </ul>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Culture</h3>
-                    <ul>
-                      <li>Movies</li>
-                      <li>Music</li>
-                      <li>Retro</li>
-                      <li>Funny</li>
-                      <li>Comics</li>
-                      <li>Tv Shows</li>
-                      <li>Cartoons</li>
+                    <ul className="space-y-2 text-black">
+                      <li className="font-normal">Movies</li>
+                      <li className="font-normal">Music</li>
+                      <li className="font-normal">Retro</li>
+                      <li className="font-normal">Funny</li>
+                      <li className="font-normal">Comics</li>
+                      <li className="font-normal">Tv Shows</li>
+                      <li className="font-normal">Cartoons</li>
                     </ul>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">Interior Design</h3>
-                    <ul>
-                      <li>Inspirational</li>
-                      <li>Vintage posters</li>
-                      <li>Minimalistic</li>
-                      <li>Pop art</li>
-                      <li>Text art</li>
-                      <li>Abstract</li>
-                      <li>Paintings</li>
+                    <ul className="space-y-2 text-black">
+                      <li className="font-normal">Inspirational</li>
+                      <li className="font-normal">Vintage posters</li>
+                      <li className="font-normal">Minimalistic</li>
+                      <li className="font-normal">Pop art</li>
+                      <li className="font-normal">Text art</li>
+                      <li className="font-normal">Abstract</li>
+                      <li className="font-normal">Paintings</li>
                     </ul>
                   </div>
                 </div>
