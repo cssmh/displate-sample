@@ -7,6 +7,7 @@ import {
   FiMenu,
   FiUser,
   FiX,
+  FiArrowRight,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
@@ -346,77 +347,64 @@ const Navbar = () => {
             <FiX />
           </button>
         </div>
+        <div className="flex items-center px-6 py-4 border-b text-gray-700">
+          <FiUser className="text-xl mr-2" />
+          <span className="font-medium">
+            Hello!{" "}
+            <Link to="/login" className="text-blue-500">
+              Log in
+            </Link>{" "}
+            or{" "}
+            <Link to="/signup" className="text-blue-500">
+              Sign up
+            </Link>
+          </span>
+        </div>
         <div className="flex flex-col space-y-6 p-6 text-gray-700">
-          <Link to="/" onClick={toggleSidebar} className="hover:text-blue-500">
+          <Link
+            to="/"
+            onClick={toggleSidebar}
+            className="border-b py-2 hover:text-blue-500"
+          >
             Home
           </Link>
-          <Link
-            to="/browse-posters"
-            onClick={toggleSidebar}
-            className="hover:text-blue-500"
-          >
-            Browse Posters
-          </Link>
-          <Link
-            to="/collections"
-            onClick={toggleSidebar}
-            className="hover:text-blue-500"
-          >
-            Collections
-          </Link>
-          <Link
-            to="/discover-brands"
-            onClick={toggleSidebar}
-            className="hover:text-blue-500"
-          >
-            Discover Brands
-          </Link>
-          <Link
-            to="/limited-displates"
-            onClick={toggleSidebar}
-            className="hover:text-blue-500"
-          >
-            Limited Displates
-          </Link>
-          <Link
-            to="/accessories-gifts"
-            onClick={toggleSidebar}
-            className="hover:text-blue-500"
-          >
-            Accessories & Gifts
-          </Link>
+          {[
+            { path: "/browse-posters", label: "Browse Posters" },
+            { path: "/collections", label: "Collections" },
+            { path: "/discover-brands", label: "Discover Brands" },
+            { path: "/limited-displates", label: "Limited Displates" },
+            { path: "/accessories-gifts", label: "Accessories & Gifts" },
+            { path: "/support", label: "Support" },
+            { path: "/about-us", label: "About Us" },
+          ].map((route) => (
+            <Link
+              key={route.path}
+              to={route.path}
+              onClick={toggleSidebar}
+              className="flex items-center justify-between border-b py-2 hover:text-blue-500"
+            >
+              {route.label}
+              <FiArrowRight className="text-xl text-gray-500" />
+            </Link>
+          ))}
           <Link
             to="/whats-a-displate"
             onClick={toggleSidebar}
-            className="hover:text-blue-500"
+            className="border-b py-2 hover:text-blue-500"
           >
             What&apos;s a Displate
           </Link>
           <Link
             to="/displate-club"
             onClick={toggleSidebar}
-            className="hover:text-blue-500"
+            className="border-b py-2 hover:text-blue-500"
           >
             Displate Club
           </Link>
           <Link
-            to="/support"
-            onClick={toggleSidebar}
-            className="hover:text-blue-500"
-          >
-            Support
-          </Link>
-          <Link
-            to="/about-us"
-            onClick={toggleSidebar}
-            className="hover:text-blue-500"
-          >
-            About Us
-          </Link>
-          <Link
             to="/sell-your-art"
             onClick={toggleSidebar}
-            className="hover:text-blue-500"
+            className="border-b py-2 hover:text-blue-500"
           >
             Sell Your Art
           </Link>
