@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import logo from "../assets/logo_dark.svg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -71,7 +72,7 @@ const Navbar = () => {
           </button>
           <div>
             <Link to="/" className="hover:text-blue-500">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo" className="w-[90%] ml-auto" />
             </Link>
             <p className="text-sm font-semibold text-right text-gray-800">
               Metal Posters
@@ -124,7 +125,7 @@ const Navbar = () => {
                     Browse Posters
                   </button>
                   {isMegaMenuVisible && (
-                    <div className="fixed text-left top-[118px] left-0 w-full bg-white shadow-2xl p-12 grid grid-cols-5 gap-6">
+                    <div className="fixed text-left top-[114px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
                       <div className="text-base">
                         <h3 className="font-bold mb-2">Passion</h3>
                         <ul className="space-y-2 text-black">
@@ -173,28 +174,28 @@ const Navbar = () => {
                           <li className="font-normal">Paintings</li>
                         </ul>
                       </div>
-                      <div className="text-white bg-gradient-to-r from-blue-500 to-blue-300 p-8">
+                      <div className="col-span-3 rounded-lg text-white bg-gradient-to-r from-violet-500 to-violet-400 p-8">
                         <h1 className="text-3xl font-bold">Displate Textra</h1>
                         <p className="text-sm">3D-textured metal posters</p>
-                        <p className="flex items-start space-x-2">
-                          <span className="text-green-400">✔</span>
-                          <span className="text-sm">
-                            Selective matte & gloss finish
-                          </span>
-                        </p>
-                        <li className="flex items-start space-x-2">
-                          <span className="text-green-400 font-bold">✔</span>
-                          <span>Outstanding 3D details</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <span className="text-green-400 font-bold">✔</span>
-                          <span>Added depth and texture</span>
-                        </li>
-                        <div className="flex justify-between items-center">
-                          <li className="flex items-start space-x-2">
-                            <span className="text-green-400 font-bold">✔</span>
+                        <div className="mt-3">
+                          <p className="flex text-white items-center gap-2">
+                            <FaRegCheckCircle />
+                            <span>Selective matte & gloss finish</span>
+                          </p>
+                          <p className="flex text-white items-center gap-2">
+                            <FaRegCheckCircle />
+                            <span>Outstanding 3D details</span>
+                          </p>
+                          <p className="flex text-white items-center gap-2">
+                            <FaRegCheckCircle />
+                            <span>Added depth and texture</span>
+                          </p>
+                          <p className="flex text-white items-center gap-2">
+                            <FaRegCheckCircle />
                             <span>Selected art now in size L!</span>
-                          </li>
+                          </p>
+                        </div>
+                        <div className="flex justify-end">
                           <button className="bg-white text-black font-semibold py-2 px-4 rounded shadow hover:bg-gray-100">
                             See More
                           </button>
@@ -205,7 +206,7 @@ const Navbar = () => {
                 </div>
                 <Link
                   to="/collections"
-                  className="hover:text-blue-500 transition duration-200"
+                  className="hover:text-blue-500 transition duration-200 py-"
                 >
                   Collections
                 </Link>
@@ -278,12 +279,9 @@ const Navbar = () => {
             >
               <button className="hover:text-blue-500">Browse Posters</button>
               {isMegaMenuVisible && (
-                <div
-                  className="fixed top-44 left-0 w-full bg-white shadow-lg p-6 grid grid-cols-4 gap-6"
-                  style={{ zIndex: 50 }}
-                >
-                  <div>
-                    <h3 className="font-semibold mb-2">Passion</h3>
+                <div className="fixed text-left top-[118px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
+                  <div className="text-base">
+                    <h3 className="font-bold mb-2">Passion</h3>
                     <ul className="space-y-2 text-black">
                       <li className="font-normal">Gaming</li>
                       <li className="font-normal">Sport</li>
@@ -294,8 +292,8 @@ const Navbar = () => {
                       <li className="font-normal">Japanese & Asian</li>
                     </ul>
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Nature & Travel</h3>
+                  <div className="text-base">
+                    <h3 className="font-bold mb-2">Nature & Travel</h3>
                     <ul className="space-y-2 text-black">
                       <li className="font-normal">Maps</li>
                       <li className="font-normal">Animals</li>
@@ -306,8 +304,8 @@ const Navbar = () => {
                       <li className="font-normal">Floral</li>
                     </ul>
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Culture</h3>
+                  <div className="text-base">
+                    <h3 className="font-bold mb-2">Culture</h3>
                     <ul className="space-y-2 text-black">
                       <li className="font-normal">Movies</li>
                       <li className="font-normal">Music</li>
@@ -318,8 +316,8 @@ const Navbar = () => {
                       <li className="font-normal">Cartoons</li>
                     </ul>
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Interior Design</h3>
+                  <div className="text-base">
+                    <h3 className="font-bold mb-2">Interior Design</h3>
                     <ul className="space-y-2 text-black">
                       <li className="font-normal">Inspirational</li>
                       <li className="font-normal">Vintage posters</li>
@@ -329,6 +327,33 @@ const Navbar = () => {
                       <li className="font-normal">Abstract</li>
                       <li className="font-normal">Paintings</li>
                     </ul>
+                  </div>
+                  <div className="col-span-3 rounded-lg text-white bg-gradient-to-r from-violet-500 to-violet-400 p-8">
+                    <h1 className="text-3xl font-bold">Displate Textra</h1>
+                    <p className="text-sm">3D-textured metal posters</p>
+                    <div className="mt-3">
+                      <p className="flex text-white items-center gap-2">
+                        <FaRegCheckCircle />
+                        <span>Selective matte & gloss finish</span>
+                      </p>
+                      <p className="flex text-white items-center gap-2">
+                        <FaRegCheckCircle />
+                        <span>Outstanding 3D details</span>
+                      </p>
+                      <p className="flex text-white items-center gap-2">
+                        <FaRegCheckCircle />
+                        <span>Added depth and texture</span>
+                      </p>
+                      <p className="flex text-white items-center gap-2">
+                        <FaRegCheckCircle />
+                        <span>Selected art now in size L!</span>
+                      </p>
+                    </div>
+                    <div className="flex justify-end">
+                      <button className="bg-white text-black font-semibold py-2 px-4 rounded shadow hover:bg-gray-100">
+                        See More
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}
@@ -464,7 +489,7 @@ const Navbar = () => {
           <button onClick={toggleSubSidebar} className="text-gray-700 text-2xl">
             <IoIosArrowBack />
           </button>
-          <Link to="/" className="text-center">
+          <Link to="/" className="text-center mt-3">
             <img src={logo} alt="logo" className="h-8" />
             <p className="text-sm font-semibold text-gray-800">Metal Posters</p>
           </Link>
