@@ -141,33 +141,32 @@ const Cart = () => {
         <div className="max-w-[1250px] mx-auto">
           <Slider {...sliderSettings}>
             {sampleDesigns.map((design) => (
-              <div
-                key={design.id}
-                className="p-2 flex border flex-col items-center text-center"
-              >
-                <div className="bg-white p-4">
-                  <div className="flex items-center mb-4">
-                    <img
-                      src={design.avatar}
-                      alt={design.title}
-                      className="w-10 h-10 rounded-full mr-3"
-                    />
-                    <div>
-                      <h3 className="font-bold text-left">{design.title}</h3>
-                      <p className="text-sm text-gray-600 text-left">
-                        {design.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    {design.images.map((img, idx) => (
+              <div key={design.id} className="px-3">
+                <div className="p-2 hover:shadow-2xl hover:border-none flex border flex-col items-center text-center">
+                  <div className="bg-white p-2">
+                    <div className="flex items-center mb-4">
                       <img
-                        key={idx}
-                        src={img}
-                        alt={`Design ${idx + 1}`}
-                        className="w-full h-32 object-cover rounded-md"
+                        src={design.avatar}
+                        alt={design.title}
+                        className="w-10 h-10 rounded-full mr-3"
                       />
-                    ))}
+                      <div>
+                        <h3 className="font-bold text-left">{design.title}</h3>
+                        <p className="text-sm text-gray-600 text-left">
+                          {design.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {design.images.map((img, idx) => (
+                        <img
+                          key={idx}
+                          src={img}
+                          alt={`Design ${idx + 1}`}
+                          className="w-full object-cover rounded-md"
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
