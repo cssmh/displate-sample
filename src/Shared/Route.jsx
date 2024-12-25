@@ -5,6 +5,7 @@ import Cart from "../Pages/Cart";
 import BrowseCollections from "../Pages/BrowseCollections";
 import Wishlist from "../Pages/Wishlist";
 import Gifts from "../Pages/Gifts";
+import SIgnin from "../Components/SIgnin";
 
 const Route = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const Route = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/auth/signin",
+        element: <SIgnin />,
       },
       {
         path: "/cart",
