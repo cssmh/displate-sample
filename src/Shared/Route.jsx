@@ -6,6 +6,7 @@ import BrowseCollections from "../Pages/BrowseCollections";
 import Wishlist from "../Pages/Wishlist";
 import Gifts from "../Pages/Gifts";
 import SIgnin from "../Components/SIgnin";
+import CLub from "../Pages/CLub";
 
 const Route = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const Route = createBrowserRouter([
       {
         path: "/lp/gifts",
         element: <Gifts />,
+      },
+      {
+        path: "/join-displate-club",
+        element: <CLub />,
       },
       {
         path: "/wishlist",

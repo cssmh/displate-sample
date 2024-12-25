@@ -46,7 +46,7 @@ const Navbar = () => {
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 30) {
       setScrolled(true);
     } else {
       setScrolled(false);
