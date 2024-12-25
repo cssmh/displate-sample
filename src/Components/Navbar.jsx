@@ -8,11 +8,11 @@ import {
   FiUser,
   FiX,
 } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import logo from "../assets/logo_dark.svg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { FaCuttlefish, FaRegCheckCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -21,6 +21,17 @@ const Navbar = () => {
   const [inputValue, setInputValue] = useState("");
   const [isSubSidebarOpen, setSubSidebarOpen] = useState(false);
   const toggleSubSidebar = () => setSubSidebarOpen(!isSubSidebarOpen);
+  const loc = useLocation();
+  const showOffer =
+    loc.pathname === "/" ||
+    loc.pathname === "/browse-collections" ||
+    loc.pathname === "lp/gifts";
+  const [isClubHoverVisible, setIsClubHoverVisible] = useState(false);
+  const handleMouseEnterClub = () => setIsClubHoverVisible(true);
+  const handleMouseLeaveClub = () => setIsClubHoverVisible(false);
+  const [isJoinHoverVisible, setIsJoinHoverVisible] = useState(false);
+  const handleMouseEnterJoin = () => setIsJoinHoverVisible(true);
+  const handleMouseLeaveJoin = () => setIsJoinHoverVisible(false);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -56,12 +67,14 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 left-0 right-0 z-50">
-      <div className="bg-[rgb(0,239,210)] py-2">
-        <p className="text-sm font-semibold text-center px-3 md:px-12">
-          🎁 Up to 37% OFF all non-limited Displates Code: XMAS Ends: 1 h : 46 m
-          : 39 s
-        </p>
-      </div>
+      {showOffer && (
+        <div className="bg-[rgb(0,239,210)] py-2">
+          <p className="text-sm font-semibold text-center px-3 md:px-12">
+            🎁 Up to 37% OFF all non-limited Displates Code: XMAS Ends: 1 h : 46
+            m : 39 s
+          </p>
+        </div>
+      )}
       <nav className="bg-white border-b py-3">
         <div className="container mx-auto flex items-center justify-between px-4">
           <button
@@ -237,34 +250,84 @@ const Navbar = () => {
               </div>
             </div>
           )}
-          <div className="flex items-center space-x-2 md:space-x-6 text-gray-700">
+          <div className="flex items-center space-x-2 md:space-x-5 text-gray-700">
             {scrolled && (
-              <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
+              <div className="flex flex-col items-center hover:text-blue-500 cursor-pointer">
                 <FiSearch size={20} />
                 <span className="text-sm">Search</span>
               </div>
             )}
-            <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
+            <Link
+              to="/lp/gifts"
+              className="flex flex-col items-center hover:text-blue-500 cursor-pointer"
+            >
               <FiGift size={20} />
               <span className="text-sm">Gifts</span>
-            </div>
-            <div className="hidden md:flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
-              <FiUser size={20} />
+            </Link>
+            <Link
+              to="/join-displate-club"
+              className="hidden md:flex flex-col items-center hover:text-blue-500 cursor-pointer relative"
+              onMouseEnter={handleMouseEnterClub}
+              onMouseLeave={handleMouseLeaveClub}
+            >
+              <FaCuttlefish size={20} />
               <span className="text-sm">Club</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
+              {isClubHoverVisible && (
+                <div className="absolute top-[100%] -right-16 mt-2 bg-white text-black shadow-lg rounded-lg p-3 w-80 z-10">
+                  <p className="flex text-[12px] items-center gap-2">
+                    <FaRegCheckCircle className="text-blue-500" />
+                    <span>Free shipping, discounts and storage sleeve</span>
+                  </p>
+                  <p className="flex text-[12px] items-center gap-2">
+                    <FaRegCheckCircle className="text-blue-500" />
+                    <span>Free Displates every 12 months</span>
+                  </p>
+                  <p className="flex text-[12px] items-center gap-2">
+                    <FaRegCheckCircle className="text-blue-500" />
+                    <span>Early Access to Limited Editions</span>
+                  </p>
+                  <p className="flex text-[12px] items-center gap-2">
+                    <FaRegCheckCircle className="text-blue-500" />
+                    <span>Tool to create Displates from your own photos</span>
+                  </p>
+                </div>
+              )}
+            </Link>
+            <Link
+              to="/wishlist"
+              className="flex flex-col items-center hover:text-blue-500 cursor-pointer"
+            >
               <FiHeart size={20} />
               <span className="text-sm">Wishlist</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
-              <Link to="/cart">
-                <FiShoppingCart size={20} />
-                <span className="text-sm">Cart</span>
-              </Link>
-            </div>
-            <div className="hidden md:flex flex-col items-center space-y-1 hover:text-blue-500 cursor-pointer">
+            </Link>
+            <Link
+              to="/cart"
+              className="flex flex-col items-center hover:text-blue-500 cursor-pointer"
+            >
+              <FiShoppingCart size={20} />
+              <span className="text-sm">Cart</span>
+            </Link>
+            <div
+              className="hidden md:flex flex-col items-center hover:text-blue-500 cursor-pointer relative"
+              onMouseEnter={handleMouseEnterJoin}
+              onMouseLeave={handleMouseLeaveJoin}
+            >
               <FiUser size={20} />
               <span className="text-sm">Join</span>
+              {isJoinHoverVisible && (
+                <div className="absolute top-[80%] -right-8 mt-2 bg-white text-black shadow-lg rounded-lg w-64 z-10 p-4">
+                  <Link to="/auth/signin">
+                    {" "}
+                    <button className="bg-blue-500 rounded-lg text-white font-semibold text-center p-3 w-full">
+                      Log in
+                    </button>
+                  </Link>
+                  <p className="text-sm mt-2">
+                    Don&apos;t have an account yet?{" "}
+                    <span className="text-blue-600 font-semibold">Sign up</span>
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
