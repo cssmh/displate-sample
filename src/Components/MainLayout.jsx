@@ -4,7 +4,10 @@ import Footer from "./Footer";
 
 const MainLayout = () => {
   const loc = useLocation();
-  const noNavFooter = loc.pathname === "/auth/signin";
+  const noNavFooter =
+    loc.pathname === "/auth/signin" ||
+    loc.pathname === "/auth/signin/register-user";
+
   return (
     <div>
       {!noNavFooter && <Navbar />}

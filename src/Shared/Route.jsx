@@ -7,6 +7,7 @@ import Wishlist from "../Pages/Wishlist";
 import Gifts from "../Pages/Gifts";
 import SIgnin from "../Components/SIgnin";
 import CLub from "../Pages/CLub";
+import Register from "../Components/Register";
 
 const Route = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const Route = createBrowserRouter([
       {
         path: "/auth/signin",
         element: <SIgnin />,
+      },
+      {
+        path: "/auth/signin/register-user",
+        element: <Register />,
       },
       {
         path: "/cart",

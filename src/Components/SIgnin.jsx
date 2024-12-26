@@ -17,7 +17,10 @@ const Signin = () => {
         <h1 className="text-2xl font-semibold">Login</h1>
         <p className="text-sm">
           Not a member yet?{" "}
-          <Link to="/signup" className="text-[#1194f2] font-semibold">
+          <Link
+            to="/auth/signin/register-user"
+            className="text-[#1194f2] font-semibold"
+          >
             Create an account
           </Link>
         </p>
@@ -58,7 +61,6 @@ const Signin = () => {
           </span>
           <div className="border-t border-gray-300"></div>
         </div>
-
         <button className="w-full bg-white border text-[#1194f2] border-[#1194f2] flex items-center justify-center font-semibold gap-2 py-2 rounded-md">
           <FaGoogle />
           Log in with Google
