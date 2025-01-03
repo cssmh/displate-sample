@@ -4,7 +4,7 @@ import Home from "../Components/Home";
 import Cart from "../Pages/Cart";
 import BrowseCollections from "../Pages/BrowseCollections";
 import Wishlist from "../Pages/Wishlist";
-import Gifts from "../Pages/Gifts";
+import Gifts from "../Pages/Gifts/Gifts";
 import SIgnin from "../Components/SIgnin";
 import CLub from "../Pages/CLub";
 import Register from "../Components/Register";
