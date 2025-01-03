@@ -1,9 +1,27 @@
+import { useRef } from "react";
 import { FaPlay } from "react-icons/fa";
 import gif from "../../assets/egiftcards.png";
 import { IoGameController } from "react-icons/io5";
 import Brandshops from "./Brandshops";
 
 const Gifts = () => {
+  const sectionsRef = {
+    gamer: useRef(null),
+    movieBuff: useRef(null),
+    animeLover: useRef(null),
+    tvShowsAddict: useRef(null),
+    creativeSoul: useRef(null),
+    petParent: useRef(null),
+    memeEnthusiast: useRef(null),
+    sportFanatic: useRef(null),
+  };
+
+  const handleScrollToSection = (section) => {
+    if (sectionsRef[section]?.current) {
+      sectionsRef[section].current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto">
       <div className="flex flex-col lg:flex-row justify-between gap-4 py-6">
@@ -63,43 +81,34 @@ const Gifts = () => {
           />
         </div>
       </div>
-      <div className="py-12">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-semibold">Unlock our top picks for:</h2>
-        </div>
-        <div className="flex overflow-x-auto space-x-5">
-          <div className="flex items-center gap-2 border rounded-full py-1 px-3 min-w-max mb-5">
-            <span className="text-xl">🎮</span>
-            <p className="text-sm font-bold">Passionate Gamer</p>
-          </div>
-          <div className="flex items-center gap-2 border rounded-full py-1 px-3 min-w-max mb-5">
-            <span className="text-xl">🎬</span>
-            <p className="text-sm font-semibold">Movie Buff</p>
-          </div>
-          <div className="flex items-center gap-2 border rounded-full py-1 px-3 min-w-max mb-5">
-            <span className="text-xl">⛩️</span>
-            <p className="text-sm font-semibold">Anime Lover</p>
-          </div>
-          <div className="flex items-center gap-2 border rounded-full py-1 px-3 min-w-max mb-5">
-            <span className="text-xl">📺</span>
-            <p className="text-sm font-semibold">TV Shows Addict</p>
-          </div>
-          <div className="flex items-center gap-2 border rounded-full py-1 px-3 min-w-max mb-5">
-            <span className="text-xl">🌟</span>
-            <p className="text-sm font-semibold">Creative Soul</p>
-          </div>
-          <div className="flex items-center gap-2 border rounded-full py-1 px-3 min-w-max mb-5">
-            <span className="text-xl">🐾</span>
-            <p className="text-sm font-semibold">Pet Parent</p>
-          </div>
-          <div className="flex items-center gap-2 border rounded-full py-1 px-3 min-w-max mb-5">
-            <span className="text-xl">😄</span>
-            <p className="text-sm font-semibold">Meme Enthusiast</p>
-          </div>
-          <div className="flex items-center gap-2 border rounded-full py-1 px-3 min-w-max mb-5">
-            <span className="text-xl">🏀</span>
-            <p className="text-sm font-semibold">Sport Fanatic</p>
-          </div>
+      <div className="text-center mt-7 mb-3">
+        <h2 className="text-4xl font-semibold">Unlock our top picks for:</h2>
+      </div>
+      <div className="sticky top-[114px] z-50 bg-white py-4">
+        <div className="flex overflow-x-auto space-x-5 px-4">
+          {Object.keys(sectionsRef).map((key) => (
+            <button
+              key={key}
+              onClick={() => handleScrollToSection(key)}
+              className="flex items-center gap-2 border rounded-full py-1 mb-5 px-3 min-w-max text-black font-semibold"
+            >
+              <span className="text-xl">
+                {key === "gamer" && "🎮"}
+                {key === "movieBuff" && "🎬"}
+                {key === "animeLover" && "⛩️"}
+                {key === "tvShowsAddict" && "📺"}
+                {key === "creativeSoul" && "🌟"}
+                {key === "petParent" && "🐾"}
+                {key === "memeEnthusiast" && "😄"}
+                {key === "sportFanatic" && "🏀"}
+              </span>
+              <p className="text-sm font-semibold">
+                {key
+                  .replace(/([A-Z])/g, " $1")
+                  .replace(/^./, (str) => str.toUpperCase())}
+              </p>
+            </button>
+          ))}
         </div>
       </div>
       <div className="flex flex-col lg:flex-row items-center justify-between py-6">
