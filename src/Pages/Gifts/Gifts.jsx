@@ -3,6 +3,8 @@ import { FaPlay } from "react-icons/fa";
 import gif from "../../assets/egiftcards.png";
 import { IoGameController } from "react-icons/io5";
 import Brandshops from "./Brandshops";
+import MorePosters from "./MorePosters";
+import MovieBuff from "./MovieBuff";
 
 const Gifts = () => {
   const sectionsRef = {
@@ -140,6 +142,8 @@ const Gifts = () => {
         </div>
       </div>
       <Brandshops />
+      <MorePosters />
+      <MovieBuff />
     </div>
   );
 };
