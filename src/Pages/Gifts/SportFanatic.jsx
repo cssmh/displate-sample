@@ -217,12 +217,12 @@ const SportFanatic = () => {
             </Link>
           ))}
         </div>
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center border-b pb-12 mt-10">
           <button className="font-bold text-[#449ff1] border border-[#449ff1] bg-white px-4 shadow-md py-2 rounded-md">
             See more posters
           </button>
         </div>
-        <div className="grid mt-32 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mx-2 md:mx-0">
+        <div className="grid mt-28 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mx-2 md:mx-0">
           {data.slice(0, 5).map((card) => (
             <div
               key={card.id}

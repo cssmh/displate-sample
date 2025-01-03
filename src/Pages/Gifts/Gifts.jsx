@@ -9,6 +9,8 @@ import CreativeSoul from "./CreativeSoul";
 import PetParent from "./PetParent";
 import MemeEnthusiast from "./MemeEnthusiast";
 import SportFanatic from "./SportFanatic";
+import Newsletter from "../../Components/Newsletter";
+import FindGiftIdeas from "./FindGiftIdeas";
 
 const Gifts = () => {
   const sectionsRef = {
@@ -24,7 +26,10 @@ const Gifts = () => {
 
   const handleScrollToSection = (section) => {
     if (sectionsRef[section]?.current) {
-      sectionsRef[section].current.scrollIntoView({ behavior: "smooth" });
+      sectionsRef[section].current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
@@ -117,14 +122,89 @@ const Gifts = () => {
           ))}
         </div>
       </div>
-      <PassionateGamer />
-      <MovieBuff />
-      <AnimeLover />
-      <TVShows />
-      <CreativeSoul />
-      <PetParent />
-      <MemeEnthusiast />
-      <SportFanatic />
+      <div ref={sectionsRef.gamer}>
+        <PassionateGamer />
+      </div>
+      <div ref={sectionsRef.movieBuff}>
+        <MovieBuff />
+      </div>
+      <div ref={sectionsRef.animeLover}>
+        <AnimeLover />
+      </div>
+      <div ref={sectionsRef.tvShowsAddict}>
+        <TVShows />
+      </div>
+      <div ref={sectionsRef.creativeSoul}>
+        <CreativeSoul />
+      </div>
+      <div ref={sectionsRef.petParent}>
+        <PetParent />
+      </div>
+      <div ref={sectionsRef.memeEnthusiast}>
+        <MemeEnthusiast />
+      </div>
+      <div ref={sectionsRef.sportFanatic}>
+        <SportFanatic />
+      </div>
+      <div className="mb-8">
+        <h1 className="text-center text-5xl font-semibold">Why Displate?</h1>
+        <div className="grid grid-cols-2 max-w-2xl gap-7 mt-6 mx-auto">
+          <div className="flex items-center gap-2">
+            <img
+              src="https://assets-static-prod.displate.com/webflow/images/webflow_assets/usp_gift.jpg"
+              alt="image"
+              className="w-24 rounded-full"
+            />
+            <p>
+              <p className="text-lg font-semibold">A perfect gift</p>
+              <p className="text-gray-500">
+                Displates arrive in ready-to-gift packaging
+              </p>
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <img
+              src="https://assets-static-prod.displate.com/webflow/images/webflow_assets/usp_sign.jpg"
+              alt="image"
+              className="w-24 rounded-full"
+            />
+            <p>
+              <p className="text-lg font-semibold">A perfect gift</p>
+              <p className="text-gray-500">
+                Displates arrive in ready-to-gift packaging
+              </p>
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <img
+              src="https://assets-static-prod.displate.com/webflow/images/webflow_assets/usp_metal.jpg"
+              alt="image"
+              className="w-24 rounded-full"
+            />
+            <p>
+              <p className="text-lg font-semibold">A perfect gift</p>
+              <p className="text-gray-500">
+                Displates arrive in ready-to-gift packaging
+              </p>
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <img
+              src="https://assets-static-prod.displate.com/webflow/images/webflow_assets/usp_3d.jpg"
+              alt="image"
+              className="w-24 rounded-full"
+            />
+            <p>
+              <p className="text-lg font-semibold">A perfect gift</p>
+              <p className="text-gray-500">
+                Displates arrive in ready-to-gift packaging
+              </p>
+            </p>
+          </div>
+        </div>
+      </div>
+      <Newsletter />
+      <FindGiftIdeas />
     </div>
   );
 };
