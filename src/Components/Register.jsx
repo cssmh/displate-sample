@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo_dark.svg";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
 
 const Register = () => {
   const [isArtist, setIsArtist] = useState(false);
@@ -80,22 +81,36 @@ const Register = () => {
             placeholder="Password"
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
           />
-          <div className="space-y-1 mt-2 text-sm">
-            <p className="text-gray-600">
-              <span className="text-red-500">✗</span> 10 characters minimum
+          <div className="space-y-3 mt-2 text-sm">
+            <p className="text-gray-600 flex items-center gap-1">
+              <span className="text-xs bg-gray-200 p-[2px] rounded-full">
+                <RxCross2 />
+              </span>{" "}
+              10 characters minimum
             </p>
-            <p className="text-gray-600">
-              <span className="text-red-500">✗</span> 1 special character (e.g.
-              # or %)
+            <p className="text-gray-600 flex items-center gap-1">
+              <span className="text-xs bg-gray-200 p-[2px] rounded-full">
+                <RxCross2 />
+              </span>{" "}
+              1 special character (e.g. # or %)
             </p>
-            <p className="text-gray-600">
-              <span className="text-red-500">✗</span> 1 uppercase character
+            <p className="text-gray-600 flex items-center gap-1">
+              <span className="text-xs bg-gray-200 p-[2px] rounded-full">
+                <RxCross2 />
+              </span>{" "}
+              1 uppercase character
             </p>
-            <p className="text-gray-600">
-              <span className="text-red-500">✗</span> 1 lowercase character
+            <p className="text-gray-600 flex items-center gap-1">
+              <span className="text-xs bg-gray-200 p-[2px] rounded-full">
+                <RxCross2 />
+              </span>{" "}
+              1 lowercase character
             </p>
-            <p className="text-gray-600">
-              <span className="text-red-500">✗</span> 1 digit
+            <p className="text-gray-600 flex items-center gap-1">
+              <span className="text-xs bg-gray-200 p-[2px] rounded-full">
+                <RxCross2 />
+              </span>{" "}
+              1 digit
             </p>
           </div>
         </div>

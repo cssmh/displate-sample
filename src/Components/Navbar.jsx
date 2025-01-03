@@ -67,14 +67,14 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 left-0 right-0 z-50">
-      {showOffer && (
+      {/* {showOffer && ( */}
         <div className="bg-[rgb(0,239,210)] py-2">
           <p className="text-sm font-semibold text-center px-3 md:px-12">
             🎁 Up to 37% OFF all non-limited Displates Code: XMAS Ends: 1 h : 46
             m : 39 s
           </p>
         </div>
-      )}
+      {/* )} */}
       <nav className="bg-white border-b py-3">
         <div className="container mx-auto flex items-center justify-between px-4">
           <button
@@ -312,8 +312,10 @@ const Navbar = () => {
               onMouseEnter={handleMouseEnterJoin}
               onMouseLeave={handleMouseLeaveJoin}
             >
-              <FiUser size={20} />
-              <span className="text-sm">Join</span>
+              <Link to="/auth/signin">
+                <FiUser size={20} />
+                <span className="text-sm">Join</span>
+              </Link>
               {isJoinHoverVisible && (
                 <div className="absolute top-[80%] -right-8 mt-2 bg-white text-black shadow-lg rounded-lg w-64 z-10 p-4">
                   <Link to="/auth/signin">
