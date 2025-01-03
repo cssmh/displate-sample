@@ -1,8 +1,8 @@
+import { FaVolleyballBall } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
-import { IoGameController } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-const MovieBuff = () => {
+const SportFanatic = () => {
   const games = [
     {
       name: "Cyberpunk 2077",
@@ -59,7 +59,7 @@ const MovieBuff = () => {
         "https://static.displate.com/brand/layout/799c0af2-b45a-4a77-9c1b-11ce50dcfd93/catalogCoverStandard1730726236.jpg",
     },
   ];
-  
+
   const data = [
     {
       id: 1,
@@ -140,14 +140,14 @@ const MovieBuff = () => {
       <div className="flex flex-col lg:flex-row items-center justify-between py-6">
         <div className="w-full lg:w-[30%] px-6 lg:px-10 space-y-3">
           <div className="text-5xl md:text-5xl">
-            <IoGameController />
+            <FaVolleyballBall className="text-red-600" />
           </div>
           <p className="font-semibold text-xl">Gifts for a</p>
-          <h1 className="text-4xl md:text-5xl font-medium">Movie</h1>
-          <h1 className="text-4xl md:text-5xl font-medium">Buff</h1>
+          <h1 className="text-4xl md:text-5xl font-medium">Sport</h1>
+          <h1 className="text-4xl md:text-5xl font-medium">Fanatic</h1>
           <div className="mt-6">
             <Link
-              to="/posters?category=movies"
+              to="/posters?category=sport"
               className="bg-white text-lg font-semibold text-[#1185ed]"
             >
               See all Anime posters
@@ -171,7 +171,7 @@ const MovieBuff = () => {
       </div>
       <div className="flex flex-col items-center px-4 py-8">
         <h1 className="text-2xl lg:text-3xl font-semibold text-center mb-5 text-gray-800">
-          Brandshops for Gamers:
+          Brandshops for sport fans:
         </h1>
         <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4 w-full max-w-7xl">
           {games.map((game, index) => (
@@ -190,7 +190,7 @@ const MovieBuff = () => {
         </div>
         <div className="flex justify-center mt-8">
           <button className="font-bold text-[#449ff1] border border-[#449ff1] bg-white px-4 py-2 shadow-md rounded-md">
-            See all gaming brands
+            See all sport brands
           </button>
         </div>
       </div>
@@ -222,8 +222,8 @@ const MovieBuff = () => {
             See more posters
           </button>
         </div>
-        <div className="grid mt-32 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mx-2 md:mx-0">
-          {data.slice(0, 6).map((card) => (
+        <div className="grid mt-32 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mx-2 md:mx-0">
+          {data.slice(0, 5).map((card) => (
             <div
               key={card.id}
               className="bg-white shadow-lg overflow-hidden cursor-pointer"
@@ -231,7 +231,7 @@ const MovieBuff = () => {
               <img
                 src={card.imageUrl}
                 alt={`card-${card.id}`}
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-cover"
               />
             </div>
           ))}
@@ -241,4 +241,4 @@ const MovieBuff = () => {
   );
 };
 
-export default MovieBuff;
+export default SportFanatic;

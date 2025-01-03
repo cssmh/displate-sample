@@ -1,65 +1,8 @@
 import { FiHeart } from "react-icons/fi";
-import { IoGameController } from "react-icons/io5";
+import { MdOutlinePets } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const MovieBuff = () => {
-  const games = [
-    {
-      name: "Cyberpunk 2077",
-      link: "/licensed/cyberpunk-2077",
-      image:
-        "https://static.displate.com/brand/layout/340334ea-d696-4e68-85e7-9636d026cf77/catalogCoverStandard1712748346.jpg",
-    },
-    {
-      name: "The Witcher 3",
-      link: "/licensed/the-witcher-3",
-      image:
-        "https://static.displate.com/brand/layout/f0969419-d32d-4e36-beea-25df764a6739/catalogCoverStandard.jpg",
-    },
-    {
-      name: "Elden Ring",
-      link: "/licensed/elden-ring",
-      image:
-        "https://static.displate.com/brand/layout/c151898e-6a7c-41f9-bf38-85b5091a6ca6/catalogCoverStandard1708100790.jpg",
-    },
-    {
-      name: "Red Dead Redemption 2",
-      link: "/licensed/red-dead-redemption-2",
-      image:
-        "https://static.displate.com/brand/layout/1de63c25-487e-465f-8c3c-9b5d55b7adfb/catalogCoverStandard.jpg",
-    },
-    {
-      name: "Assassin's Creed Valhalla",
-      link: "/licensed/assassins-creed-valhalla",
-      image:
-        "https://static.displate.com/brand/layout/23369eeb-8d6b-40dc-a4e4-465d6d14ad50/catalogCoverStandard.jpg",
-    },
-    {
-      name: "Horizon Zero Dawn",
-      link: "/licensed/horizon-zero-dawn",
-      image:
-        "https://static.displate.com/brand/layout/6f509bf5-64b3-42de-85e6-32df23b6e26c/catalogCoverStandard.jpg",
-    },
-    {
-      name: "God of War",
-      link: "/licensed/god-of-war",
-      image:
-        "https://static.displate.com/brand/layout/a3f9dacd-3d67-4c07-a6f8-406b7ddfd84a/catalogCoverStandard.jpg",
-    },
-    {
-      name: "Spider-Man",
-      link: "/licensed/spider-man",
-      image:
-        "https://static.displate.com/brand/layout/3134386d-c57f-4bb8-882e-6c4aee42dd49/catalogCoverStandard.jpg",
-    },
-    {
-      name: "Final Fantasy XV",
-      link: "/licensed/final-fantasy-xv",
-      image:
-        "https://static.displate.com/brand/layout/799c0af2-b45a-4a77-9c1b-11ce50dcfd93/catalogCoverStandard1730726236.jpg",
-    },
-  ];
-  
+const PetParent = () => {
   const data = [
     {
       id: 1,
@@ -140,14 +83,14 @@ const MovieBuff = () => {
       <div className="flex flex-col lg:flex-row items-center justify-between py-6">
         <div className="w-full lg:w-[30%] px-6 lg:px-10 space-y-3">
           <div className="text-5xl md:text-5xl">
-            <IoGameController />
+            <MdOutlinePets className="text-red-500" />
           </div>
           <p className="font-semibold text-xl">Gifts for a</p>
-          <h1 className="text-4xl md:text-5xl font-medium">Movie</h1>
-          <h1 className="text-4xl md:text-5xl font-medium">Buff</h1>
+          <h1 className="text-4xl md:text-5xl font-medium">Peta</h1>
+          <h1 className="text-4xl md:text-5xl font-medium">Parent</h1>
           <div className="mt-6">
             <Link
-              to="/posters?category=movies"
+              to="/posters?category=animals"
               className="bg-white text-lg font-semibold text-[#1185ed]"
             >
               See all Anime posters
@@ -167,31 +110,6 @@ const MovieBuff = () => {
             />
             Your browser does not support the video tag.
           </video>
-        </div>
-      </div>
-      <div className="flex flex-col items-center px-4 py-8">
-        <h1 className="text-2xl lg:text-3xl font-semibold text-center mb-5 text-gray-800">
-          Brandshops for Gamers:
-        </h1>
-        <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4 w-full max-w-7xl">
-          {games.map((game, index) => (
-            <a
-              key={index}
-              href={game.link}
-              className="block overflow-hidden rounded-lg border border-gray-300 hover:shadow-lg transition-shadow duration-300"
-            >
-              <img
-                src={game.image}
-                alt={game.name}
-                className="w-full h-auto object-cover"
-              />
-            </a>
-          ))}
-        </div>
-        <div className="flex justify-center mt-8">
-          <button className="font-bold text-[#449ff1] border border-[#449ff1] bg-white px-4 py-2 shadow-md rounded-md">
-            See all gaming brands
-          </button>
         </div>
       </div>
       <div className="mt-3 mb-10">
@@ -222,23 +140,9 @@ const MovieBuff = () => {
             See more posters
           </button>
         </div>
-        <div className="grid mt-32 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mx-2 md:mx-0">
-          {data.slice(0, 6).map((card) => (
-            <div
-              key={card.id}
-              className="bg-white shadow-lg overflow-hidden cursor-pointer"
-            >
-              <img
-                src={card.imageUrl}
-                alt={`card-${card.id}`}
-                className="w-full h-64 object-cover"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
 };
 
-export default MovieBuff;
+export default PetParent;

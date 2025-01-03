@@ -1,7 +1,8 @@
 import { FiHeart } from "react-icons/fi";
+import { MdOutlinePets } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const MorePosters = () => {
+const MemeEnthusiast = () => {
   const data = [
     {
       id: 1,
@@ -78,50 +79,70 @@ const MorePosters = () => {
   ];
 
   return (
-    <div className="mt-3 mb-10">
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mx-2 md:mx-0">
-        {data.map((card) => (
-          <Link to={`/displate/${card.id}`} key={card.id}>
-            <div className="relative bg-white shadow-lg overflow-hidden group cursor-pointer transition-transform transform hover:scale-105">
-              <img
-                src={card.imageUrl}
-                alt={`card-${card.id}`}
-                className="w-full h-60 object-cover group-hover:opacity-80 transition-opacity duration-300"
-              />
-              <span className="absolute top-2 left-2 bg-[#341bc9] text-white px-2 py-1 text-xs font-semibold">
-                Textra
-              </span>
-              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <FiHeart
-                  size={24}
-                  className="text-white p-1 bg-gray-600 rounded-full"
-                />
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-      <div className="flex justify-center mt-10">
-        <button className="font-bold text-[#449ff1] border border-[#449ff1] bg-white px-4 shadow-md py-2 rounded-md">
-          See more posters
-        </button>
-      </div>
-      <div className="grid mt-32 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mx-2 md:mx-0">
-        {data.slice(0,6).map((card) => (
-          <div
-            key={card.id}
-            className="bg-white shadow-lg overflow-hidden cursor-pointer"
-          >
-            <img
-              src={card.imageUrl}
-              alt={`card-${card.id}`}
-              className="w-full h-64 object-cover"
-            />
+    <div className="mt-20">
+      <div className="flex flex-col lg:flex-row items-center justify-between py-6">
+        <div className="w-full lg:w-[30%] px-6 lg:px-10 space-y-3">
+          <div className="text-5xl md:text-5xl">
+            <MdOutlinePets className="text-yellow-500" />
           </div>
-        ))}
+          <p className="font-semibold text-xl">Gifts for a</p>
+          <h1 className="text-4xl md:text-5xl font-medium">Meme</h1>
+          <h1 className="text-4xl md:text-5xl font-medium">Enthusiast</h1>
+          <div className="mt-6">
+            <Link
+              to="/posters?category=funny"
+              className="bg-white text-lg font-semibold text-[#1185ed]"
+            >
+              See all Anime posters
+            </Link>
+          </div>
+        </div>
+        <div className="w-full lg:w-[70%] relative">
+          <video
+            className="w-full h-full object-cover rounded-lg"
+            autoPlay
+            loop
+            muted
+          >
+            <source
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div className="mt-3 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mx-2 md:mx-0">
+          {data.map((card) => (
+            <Link to={`/displate/${card.id}`} key={card.id}>
+              <div className="relative bg-white shadow-lg overflow-hidden group cursor-pointer transition-transform transform hover:scale-105">
+                <img
+                  src={card.imageUrl}
+                  alt={`card-${card.id}`}
+                  className="w-full h-60 object-cover group-hover:opacity-80 transition-opacity duration-300"
+                />
+                <span className="absolute top-2 left-2 bg-[#341bc9] text-white px-2 py-1 text-xs font-semibold">
+                  Textra
+                </span>
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <FiHeart
+                    size={24}
+                    className="text-white p-1 bg-gray-600 rounded-full"
+                  />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="flex justify-center mt-10">
+          <button className="font-bold text-[#449ff1] border border-[#449ff1] bg-white px-4 shadow-md py-2 rounded-md">
+            See more posters
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default MorePosters;
+export default MemeEnthusiast;

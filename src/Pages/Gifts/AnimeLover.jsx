@@ -1,8 +1,8 @@
 import { FiHeart } from "react-icons/fi";
-import { IoGameController } from "react-icons/io5";
+import { GiAngryEyes } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
-const MovieBuff = () => {
+const AnimeLover = () => {
   const games = [
     {
       name: "Cyberpunk 2077",
@@ -59,7 +59,7 @@ const MovieBuff = () => {
         "https://static.displate.com/brand/layout/799c0af2-b45a-4a77-9c1b-11ce50dcfd93/catalogCoverStandard1730726236.jpg",
     },
   ];
-  
+
   const data = [
     {
       id: 1,
@@ -140,14 +140,14 @@ const MovieBuff = () => {
       <div className="flex flex-col lg:flex-row items-center justify-between py-6">
         <div className="w-full lg:w-[30%] px-6 lg:px-10 space-y-3">
           <div className="text-5xl md:text-5xl">
-            <IoGameController />
+            <GiAngryEyes />
           </div>
           <p className="font-semibold text-xl">Gifts for a</p>
-          <h1 className="text-4xl md:text-5xl font-medium">Movie</h1>
-          <h1 className="text-4xl md:text-5xl font-medium">Buff</h1>
+          <h1 className="text-4xl md:text-5xl font-medium">Anime</h1>
+          <h1 className="text-4xl md:text-5xl font-medium">Lover</h1>
           <div className="mt-6">
             <Link
-              to="/posters?category=movies"
+              to="/posters?category=anime"
               className="bg-white text-lg font-semibold text-[#1185ed]"
             >
               See all Anime posters
@@ -241,4 +241,4 @@ const MovieBuff = () => {
   );
 };
 
-export default MovieBuff;
+export default AnimeLover;

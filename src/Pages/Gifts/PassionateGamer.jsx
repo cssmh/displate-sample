@@ -2,7 +2,7 @@ import { FiHeart } from "react-icons/fi";
 import { IoGameController } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-const MovieBuff = () => {
+const PassionateGamer = () => {
   const games = [
     {
       name: "Cyberpunk 2077",
@@ -59,7 +59,6 @@ const MovieBuff = () => {
         "https://static.displate.com/brand/layout/799c0af2-b45a-4a77-9c1b-11ce50dcfd93/catalogCoverStandard1730726236.jpg",
     },
   ];
-  
   const data = [
     {
       id: 1,
@@ -143,14 +142,15 @@ const MovieBuff = () => {
             <IoGameController />
           </div>
           <p className="font-semibold text-xl">Gifts for a</p>
-          <h1 className="text-4xl md:text-5xl font-medium">Movie</h1>
-          <h1 className="text-4xl md:text-5xl font-medium">Buff</h1>
+          <h1 className="text-4xl md:text-5xl font-medium">
+            Passionate <br /> Gamer
+          </h1>
           <div className="mt-6">
             <Link
               to="/posters?category=movies"
               className="bg-white text-lg font-semibold text-[#1185ed]"
             >
-              See all Anime posters
+              See all Gaming posters
             </Link>
           </div>
         </div>
@@ -241,4 +241,4 @@ const MovieBuff = () => {
   );
 };
 
-export default MovieBuff;
+export default PassionateGamer;

@@ -1,10 +1,14 @@
 import { useRef } from "react";
 import { FaPlay } from "react-icons/fa";
 import gif from "../../assets/egiftcards.png";
-import { IoGameController } from "react-icons/io5";
-import Brandshops from "./Brandshops";
-import MorePosters from "./MorePosters";
+import PassionateGamer from "./PassionateGamer";
 import MovieBuff from "./MovieBuff";
+import AnimeLover from "./AnimeLover";
+import TVShows from "./TVShows";
+import CreativeSoul from "./CreativeSoul";
+import PetParent from "./PetParent";
+import MemeEnthusiast from "./MemeEnthusiast";
+import SportFanatic from "./SportFanatic";
 
 const Gifts = () => {
   const sectionsRef = {
@@ -113,37 +117,14 @@ const Gifts = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-between py-6">
-        <div className="w-full lg:w-[30%] px-6 lg:px-10 space-y-3">
-          <div className="text-5xl md:text-5xl">
-            <IoGameController />
-          </div>
-          <p>Gifts for a</p>
-          <h1 className="text-4xl md:text-5xl font-medium">
-            Passionate <br /> Gamer
-          </h1>
-          <button className="bg-white pt-3 font-semibold text-[#1185ed]">
-            See all Gaming posters
-          </button>
-        </div>
-        <div className="w-full lg:w-[70%] relative">
-          <video
-            className="w-full h-full object-cover rounded-lg"
-            autoPlay
-            loop
-            muted
-          >
-            <source
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-      <Brandshops />
-      <MorePosters />
+      <PassionateGamer />
       <MovieBuff />
+      <AnimeLover />
+      <TVShows />
+      <CreativeSoul />
+      <PetParent />
+      <MemeEnthusiast />
+      <SportFanatic />
     </div>
   );
 };
