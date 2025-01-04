@@ -11,9 +11,9 @@ const MainLayout = () => {
   return (
     <div>
       {!noNavFooter && <Navbar />}
-      {/* <div className="min-h-[76vh]"> */}
+      <div className="min-h-[60vh]">
       <Outlet />
-      {/* </div> */}
+      </div>
       {!noNavFooter && <Footer />}
     </div>
   );

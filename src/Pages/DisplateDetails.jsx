@@ -1,0 +1,168 @@
+import { useState } from "react";
+import { FaHeart, FaSearchPlus } from "react-icons/fa";
+
+const DisplateDetails = () => {
+  const [activeTab, setActiveTab] = useState("Matte");
+  const [size, setSize] = useState("M");
+  const [selectedImage, setSelectedImage] = useState(
+    "https://static.displate.com/230x320/displate/2024-10-29/d0d9014a05de31c07beff9fe2f5c2962_a541c51b3c30e670c7d69684ceaee944.avif"
+  );
+  const [frameColor, setFrameColor] = useState("black");
+
+  const images = [
+    "/images/main.jpg",
+    "/images/thumb1.jpg",
+    "/images/thumb2.jpg",
+    "/images/thumb3.jpg",
+  ];
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
+  const handleSizeChange = (size) => {
+    setSize(size);
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto my-2">
+      <h1 className="mb-2 text-sm text-gray-600">
+        Home Page &gt; Arcane &gt; Key Arts &gt; Arcane Season 2
+        <span className="text-white font-semibold">Crossing the Bridge</span>
+      </h1>
+      <div className="flex flex-wrap lg:flex-nowrap gap-8">
+        <div className="relative bg-black w-full lg:w-[70%]">
+          <div className="flex items-center h-screen">
+            <img
+              src={selectedImage}
+              alt="Artwork"
+              className={`w-32 mx-auto h-auto border-4 border-${frameColor} transition-all duration-300`}
+            />
+          </div>
+          <div className="absolute top-4 right-4 flex gap-2">
+            <button className="bg-white p-2 rounded-full text-black hover:bg-gray-300">
+              <FaHeart />
+            </button>
+            <button className="bg-white p-2 rounded-full text-black hover:bg-gray-300">
+              <FaSearchPlus />
+            </button>
+          </div>
+          <div className="flex gap-2 mt-4">
+            {images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`Thumbnail ${index + 1}`}
+                className="w-16 h-16 cursor-pointer border-2 border-transparent hover:border-white"
+                onClick={() => setSelectedImage(img)}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="flex-grow">
+          <h1 className="text-3xl font-bold mb-4">Crossing the Bridge</h1>
+          <p className="text-gray-300 mb-6">
+            Jinx, the chaotic heart of Arcane, walks a
+          </p>
+          <p className="text-lg font-semibold mb-6">Read more</p>
+          <div className="flex items-center mb-6">
+            <p className="text-xl font-semibold mr-4">4.7/5</p>
+            <div className="flex text-yellow-400">
+              {[...Array(5)].map((_, index) => (
+                <span key={index}>&#9733;</span>
+              ))}
+            </div>
+            <p className="ml-4 text-sm text-gray-400">(15,439 reviews)</p>
+          </div>
+          <div className="mb-2">
+            <h2 className="text-base font-semibold mb-2">
+              Select Product Type
+            </h2>
+            <div className="w-2/3 bg-[#eceff4] py-1 rounded-full mb-6">
+              <button
+                onClick={() => handleTabChange("Matte")}
+                className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
+                  activeTab === "Matte"
+                    ? "text-[#1788ed] bg-white px-3 rounded-full"
+                    : "text-[#4f565d]"
+                }`}
+              >
+                Matte
+              </button>
+              <button
+                onClick={() => handleTabChange("Gloss")}
+                className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
+                  activeTab === "Gloss"
+                    ? "text-[#1788ed] bg-white px-3 rounded-full"
+                    : "text-[#4f565d]"
+                }`}
+              >
+                Gloss
+              </button>
+              <button
+                onClick={() => handleTabChange("Textra")}
+                className={`p-2 hover:text-[#1788ed] text-sm mx-2 font-medium transition-all duration-300 ease-in-out ${
+                  activeTab === "Textra"
+                    ? "text-[#1788ed] bg-white px-3 rounded-full"
+                    : "text-[#4f565d]"
+                }`}
+              >
+                Textra
+              </button>
+            </div>
+          </div>
+          <div className="mb-2">
+            <h2 className="text-base font-semibold mb-2">Choose Size</h2>
+            <div className="w-[42%] bg-[#eceff4] py-1 rounded-full mb-6">
+              <button
+                onClick={() => handleSizeChange("M")}
+                className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
+                  size === "M"
+                    ? "text-[#1788ed] bg-white px-3 rounded-full"
+                    : "text-[#4f565d]"
+                }`}
+              >
+                M
+              </button>
+              <button
+                onClick={() => handleSizeChange("L")}
+                className={`p-2 hover:text-[#1788ed] mx-2 font-medium transition-all duration-300 ease-in-out ${
+                  size === "L"
+                    ? "text-[#1788ed] bg-white px-3 rounded-full"
+                    : "text-[#4f565d]"
+                }`}
+              >
+                L
+              </button>
+              <button
+                onClick={() => handleSizeChange("XL")}
+                className={`p-2 hover:text-[#1788ed] text-sm mx-2 font-medium transition-all duration-300 ease-in-out ${
+                  size === "XL"
+                    ? "text-[#1788ed] bg-white px-3 rounded-full"
+                    : "text-[#4f565d]"
+                }`}
+              >
+                XL
+              </button>
+            </div>
+          </div>
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold mb-2">Add Frame</h2>
+            <div className="flex gap-4">
+              {["black", "white", "gold"].map((color, index) => (
+                <button
+                  key={index}
+                  className={`py-2 px-4 rounded border-4 border-${color} hover:opacity-80`}
+                  style={{ backgroundColor: color }}
+                  onClick={() => setFrameColor(color)}
+                ></button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DisplateDetails;

@@ -8,6 +8,7 @@ import Gifts from "../Pages/Gifts/Gifts";
 import SIgnin from "../Components/SIgnin";
 import CLub from "../Pages/CLub";
 import Register from "../Components/Register";
+import DisplateDetails from "../Pages/DisplateDetails";
 
 const Route = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const Route = createBrowserRouter([
       {
         path: "/browse-collections",
         element: <BrowseCollections />,
+      },
+      {
+        path: "/displate/:id",
+        element: <DisplateDetails />,
       },
       {
         path: "/lp/gifts",
