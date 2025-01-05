@@ -12,6 +12,7 @@ import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { FiPlus } from "react-icons/fi";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { GiMountainRoad } from "react-icons/gi";
+import { Helmet } from "react-helmet-async";
 
 const DisplateDetails = () => {
   const [activeTab, setActiveTab] = useState("Matte");
@@ -40,14 +41,17 @@ const DisplateDetails = () => {
   const handleSizeChange = (size) => {
     setSize(size);
   };
-  console.log(frameColor);
+
   return (
-    <div className="max-w-7xl mx-auto my-2">
-      <h1 className="mb-2 text-sm text-gray-600">
+    <div className="max-w-7xl mx-auto my-3">
+      <Helmet>
+        <title>Arcane Season 2 | Posters</title>
+      </Helmet>
+      <h1 className="mb-3 text-sm text-gray-600">
         Home Page &gt; Arcane &gt; Key Arts &gt; Arcane Season 2
         <span className="text-white font-semibold">Crossing the Bridge</span>
       </h1>
-      <div className="flex flex-wrap lg:flex-nowrap gap-8">
+      <div className="flex flex-wrap lg:flex-nowrap gap-6">
         <div className="relative rounded-lg bg-black w-full lg:w-[70%]">
           <div className="flex items-center h-screen">
             <img
@@ -66,7 +70,7 @@ const DisplateDetails = () => {
               }`}
             />
           </div>
-          <div className="absolute top-4 right-4 flex gap-2">
+          <div className="absolute top-4 right-4 flex flex-col gap-2">
             <button className="bg-white p-2 rounded-full text-black hover:bg-gray-300">
               <FaHeart />
             </button>
@@ -110,7 +114,7 @@ const DisplateDetails = () => {
             </p>
           </div>
           <div className="mb-2 group">
-            <h2 className="text-base font-semibold mb-2 flex items-center gap-2">
+            <h2 className="text-sm font-bold mb-2 flex items-center gap-2">
               Select Product Type
               <span>
                 <div className="drawer drawer-end z-50">
@@ -133,13 +137,10 @@ const DisplateDetails = () => {
                       aria-label="close sidebar"
                       className="drawer-overlay"
                     ></label>
-                    <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-                      <li>
-                        <a>Sidebar Item 1</a>
-                      </li>
-                      <li>
-                        <a>Sidebar Item 2</a>
-                      </li>
+                    <ul className="menu font-normal bg-base-200 text-base-content min-h-full w-80 p-4">
+                     <div>
+                      
+                     </div>
                     </ul>
                   </div>
                 </div>
@@ -178,8 +179,42 @@ const DisplateDetails = () => {
               </button>
             </div>
           </div>
-          <div className="mb-2">
-            <h2 className="text-base font-semibold mb-2">Choose Size</h2>
+          <div className="mb-2 group">
+            <h2 className="text-sm font-bold mb-2 flex items-center gap-2">
+              Choose Size
+              <span>
+                <div className="drawer drawer-end z-50">
+                  <input
+                    id="my-drawer-4"
+                    type="checkbox"
+                    className="drawer-toggle"
+                  />
+                  <div className="drawer-content flex">
+                    <label
+                      htmlFor="my-drawer-4"
+                      className="drawer-button text-[#1185ed] font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      Learn more
+                    </label>
+                  </div>
+                  <div className="drawer-side">
+                    <label
+                      htmlFor="my-drawer-4"
+                      aria-label="close sidebar"
+                      className="drawer-overlay"
+                    ></label>
+                    <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                      <li>
+                        <a>Sidebar Item 1</a>
+                      </li>
+                      <li>
+                        <a>Sidebar Item 2</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </span>
+            </h2>
             <div className="w-[65%] bg-[#eceff4] py-1 rounded-full mb-6">
               <button
                 onClick={() => handleSizeChange("M")}

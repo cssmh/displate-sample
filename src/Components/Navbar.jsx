@@ -68,14 +68,14 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 left-0 right-0 z-50">
       {/* {showOffer && ( */}
-        <div className="bg-[rgb(0,239,210)] py-2">
-          <p className="text-sm font-semibold text-center px-3 md:px-12">
-            🎁 Up to 37% OFF all non-limited Displates Code: XMAS Ends: 1 h : 46
-            m : 39 s
-          </p>
-        </div>
+      <div className="bg-[rgb(0,239,210)] py-2">
+        <p className="text-sm font-semibold text-center px-3 md:px-12">
+          🎁 Up to 37% OFF all non-limited Displates Code: XMAS Ends: 1 h : 46 m
+          : 39 s
+        </p>
+      </div>
       {/* )} */}
-      <nav className="bg-white border-b py-3">
+      <nav className="bg-white border-b border-base-300 py-3">
         <div className="container mx-auto flex items-center justify-between px-4">
           <button
             className="text-gray-700 text-2xl md:hidden"
@@ -335,7 +335,7 @@ const Navbar = () => {
         </div>
       </nav>
       {!scrolled && (
-        <div className="py-4 hidden lg:block border-b">
+        <div className="py-4 hidden lg:block border-b border-base-300">
           <div className="container mx-auto flex justify-center space-x-6 text-gray-700 text-sm font-medium">
             <div
               className="relative"
