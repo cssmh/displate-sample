@@ -8,7 +8,7 @@ import Gifts from "../Pages/Gifts/Gifts";
 import SIgnin from "../Components/SIgnin";
 import CLub from "../Pages/CLub";
 import Register from "../Components/Register";
-import DisplateDetails from "../Pages/DisplateDetails";
+import DisplateDetails from "../Pages/DisplateDetails/DisplateDetails";
 
 const Route = createBrowserRouter([
   {
