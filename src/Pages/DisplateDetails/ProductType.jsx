@@ -1,5 +1,5 @@
 import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { BsPlayCircle } from "react-icons/bs";
+import { BsExclamationCircle, BsPlayCircle } from "react-icons/bs";
 
 const ProductType = ({ handleTabChange, activeTab }) => {
   return (
@@ -23,12 +23,12 @@ const ProductType = ({ handleTabChange, activeTab }) => {
                 aria-label="close sidebar"
                 className="drawer-overlay"
               ></label>
-              <ul className="menu font-normal bg-base-200 text-base-content min-h-full w-80 p-4">
+              <ul className="menu font-normal bg-base-200 text-base-content min-h-full w-96 p-4">
                 <div className="relative">
                   <div className="flex justify-between items-center mb-4">
                     <div className="flex items-center gap-2">
-                      <AiOutlineExclamationCircle className="text-2xl text-[#1185ed]" />
-                      <p className="text-lg font-bold">Textra</p>
+                      <BsExclamationCircle className="text-xl text-black" />
+                      <p className="text-lg font-semibold">Textra</p>
                     </div>
                     <label
                       htmlFor="my-drawer-4"

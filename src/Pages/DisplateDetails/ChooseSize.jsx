@@ -1,3 +1,6 @@
+import { BsExclamationCircle } from "react-icons/bs";
+import { FaTimes } from "react-icons/fa";
+
 const ChooseSize = ({ handleSizeChange, size }) => {
   return (
     <div className="mb-2 group">
@@ -20,9 +23,40 @@ const ChooseSize = ({ handleSizeChange, size }) => {
                 aria-label="close sidebar"
                 className="drawer-overlay"
               ></label>
-              <ul className="menu font-normal bg-base-200 text-base-content min-h-full w-80 p-4">
-                <div>
-                  
+              <ul className="menu font-normal bg-base-200 text-base-content min-h-full w-96 p-6">
+                <div className="sticky top-0 flex justify-between items-center mb-4">
+                  <div className="flex items-center gap-2">
+                    <BsExclamationCircle className="text-xl text-black" />
+                    <p className="text-lg font-semibold">Size</p>
+                  </div>
+                  <label
+                    htmlFor="my-drawer-1"
+                    className="text-gray-500 hover:text-black cursor-pointer"
+                  >
+                    <FaTimes />
+                  </label>
+                </div>
+                <div className="mb-7">
+                  <div className="flex items-center gap-2">
+                    <h4 className="text-base font-bold">M</h4>
+                    <p className="text-sm text-gray-600">45 × 32cm</p>
+                  </div>
+                  <img
+                    src="https://assets-static-prod.displate.com/next-assets/public/images/hero/size-picker/mask_vertical_m@2x.png"
+                    alt="Size M"
+                    className="rounded-md mt-2 object-cover h-60 w-full"
+                  />
+                </div>
+                <div className="mb-4">
+                  <div className="flex items-center gap-2">
+                    <h4 className="text-base font-semibold">L</h4>
+                    <p className="text-sm text-gray-600">67.5 × 48cm</p>
+                  </div>
+                  <img
+                    src="https://assets-static-prod.displate.com/next-assets/public/images/hero/size-picker/mask_vertical_m@2x.png"
+                    alt="Size L"
+                    className="rounded-md mt-2 object-cover h-60 w-full"
+                  />
                 </div>
               </ul>
             </div>
@@ -38,7 +72,7 @@ const ChooseSize = ({ handleSizeChange, size }) => {
               : "text-[#4f565d]"
           }`}
         >
-          M 45 * 32cm
+          M 45 × 32cm
         </button>
         <button
           onClick={() => handleSizeChange("L")}
