@@ -103,39 +103,48 @@ const ExclusivePosters = () => {
       <h2 className="text-4xl font-semibold text-center mb-3">
         Discover exclusive posters
       </h2>
-      <h3 className="text-4xl font-semibold text-center mb-4">from top brands</h3>
+      <h3 className="text-4xl font-semibold text-center mb-4">
+        from top brands
+      </h3>
       <div className="relative">
         <Slider {...settings}>
           {cards.map((card, index) => (
             <div key={index} className="p-2">
-              <div className="relative flex flex-col items-start shadow-lg rounded-lg p-4">
+              <div className="relative shadow-lg rounded-lg overflow-hidden">
                 <img
                   src={card.logo}
                   alt={card.title}
-                  className="object-cover mx-auto mb-4"
+                  className="w-full h-auto object-cover"
                 />
-                <div className="flex items-center gap-3">
-                  <img
-                    src={card.image}
-                    alt="card"
-                    className="w-12 rounded-full"
-                  />
-                  <div>
-                    <h4 className="text-base font-bold text-gray-800">
-                      {card.title}
-                    </h4>
-                    <Link
-                      className="text-[#1f8dee] font-semibold"
-                      to="/lisenced/dangerous"
-                    >
-                      See all artworks
-                    </Link>
+                <div className="p-4 bg-white">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={card.image}
+                      alt="card"
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <h4 className="text-base font-bold text-gray-800">
+                        {card.title}
+                      </h4>
+                      <Link
+                        className="text-[#1f8dee] font-semibold"
+                        to="/lisenced/dangerous"
+                      >
+                        See all artworks
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
+      </div>
+      <div className="flex justify-center mt-8">
+        <button className="font-bold text-white rounded-md px-4 py-3 bg-[#1185ed]">
+          See all brands
+        </button>
       </div>
     </div>
   );

@@ -17,6 +17,9 @@ import MoreDisplate from "./MoreDisplate";
 import AwesomeSpaces from "../../Components/AwesomeSpaces";
 import RecentlyViewed from "./RecentlyViewed";
 import ExclusivePosters from "./ExclusivePosters";
+import Newsletter from "../../Components/Newsletter";
+import RelatedSearches from "./RelatedSearches";
+import Features from "../../Components/Features";
 
 const DisplateDetails = () => {
   const [size, setSize] = useState("M");
@@ -161,6 +164,9 @@ const DisplateDetails = () => {
       <AwesomeSpaces />
       <RecentlyViewed />
       <ExclusivePosters />
+      <Newsletter />
+      <RelatedSearches />
+      <Features />
     </div>
   );
 };
