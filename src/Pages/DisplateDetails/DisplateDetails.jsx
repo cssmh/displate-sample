@@ -13,6 +13,9 @@ import LeftImage from "./LeftImage";
 import ProductType from "./ProductType";
 import ChooseSize from "./ChooseSize";
 import MoreAbout from "./MoreAbout";
+import MoreDisplate from "./MoreDisplate";
+import AwesomeSpaces from "../../Components/AwesomeSpaces";
+import RecentlyViewed from "./RecentlyViewed";
 
 const DisplateDetails = () => {
   const [size, setSize] = useState("M");
@@ -43,7 +46,7 @@ const DisplateDetails = () => {
       </h1>
       <div className="flex flex-col lg:flex-row flex-wrap lg:flex-nowrap gap-6">
         <LeftImage frameColor={frameColor} />
-        <div className="flex-grow">
+        <div className="flex-grow mx-3 lg:mx-0">
           <h1 className="text-xl font-semibold">Crossing the Bridge</h1>
           <div>
             <p className="w-[350px]">
@@ -153,6 +156,9 @@ const DisplateDetails = () => {
           <MoreAbout />
         </div>
       </div>
+      <MoreDisplate />
+      <AwesomeSpaces />
+      <RecentlyViewed />
     </div>
   );
 };
