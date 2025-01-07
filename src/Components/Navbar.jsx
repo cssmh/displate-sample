@@ -22,10 +22,12 @@ const Navbar = () => {
   const [isSubSidebarOpen, setSubSidebarOpen] = useState(false);
   const toggleSubSidebar = () => setSubSidebarOpen(!isSubSidebarOpen);
   const loc = useLocation();
+  
   const showOffer =
     loc.pathname === "/" ||
     loc.pathname === "/browse-collections" ||
     loc.pathname === "lp/gifts";
+
   const [isClubHoverVisible, setIsClubHoverVisible] = useState(false);
   const handleMouseEnterClub = () => setIsClubHoverVisible(true);
   const handleMouseLeaveClub = () => setIsClubHoverVisible(false);
@@ -75,7 +77,7 @@ const Navbar = () => {
         </p>
       </div>
       {/* )} */}
-      <nav className="bg-white border-b border-base-300 py-3">
+      <nav className="bg-white border-b border-[#d2d2d2] py-3">
         <div className="container mx-auto flex items-center justify-between px-4">
           <button
             className="text-gray-700 text-2xl md:hidden"
@@ -335,7 +337,7 @@ const Navbar = () => {
         </div>
       </nav>
       {!scrolled && (
-        <div className="py-4 hidden lg:block border-b border-base-300">
+        <div className="py-4 hidden lg:block border-b border-[#d2d2d2]">
           <div className="container mx-auto flex justify-center space-x-6 text-gray-700 text-sm font-medium">
             <div
               className="relative"

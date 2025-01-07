@@ -59,7 +59,7 @@ const MovieBuff = () => {
         "https://static.displate.com/brand/layout/799c0af2-b45a-4a77-9c1b-11ce50dcfd93/catalogCoverStandard1730726236.jpg",
     },
   ];
-  
+
   const data = [
     {
       id: 1,
@@ -178,7 +178,7 @@ const MovieBuff = () => {
             <a
               key={index}
               href={game.link}
-              className="block overflow-hidden rounded-lg border border-gray-300 hover:shadow-lg transition-shadow duration-300"
+              className="block overflow-hidden rounded-lg border border-[#d2d2d2] hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={game.image}

@@ -33,7 +33,7 @@ const Signin = () => {
           <input
             type="email"
             placeholder="E-mail"
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
+            className="w-full border border-[#d2d2d2] rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
           />
           <label htmlFor="email" className="block text-sm">
             Password
@@ -41,7 +41,7 @@ const Signin = () => {
           <input
             type="password"
             placeholder="Password"
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
+            className="w-full border border-[#d2d2d2] rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
           />
         </div>
         <div>
@@ -59,7 +59,7 @@ const Signin = () => {
           <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 bg-white px-2 text-sm font-medium mx-auto w-max">
             Or
           </span>
-          <div className="border-t border-gray-300"></div>
+          <div className="border-t border-[#d2d2d2]"></div>
         </div>
         <button className="w-full bg-white border text-[#1194f2] border-[#1194f2] flex items-center justify-center font-semibold gap-2 py-2 rounded-md">
           <FaGoogle />

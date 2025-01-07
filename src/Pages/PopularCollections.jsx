@@ -12,7 +12,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "John Doe",
       userProfession: "Designer",
     },
@@ -24,7 +25,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Jane Smith",
       userProfession: "Artist",
     },
@@ -36,7 +38,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Jane Smith",
       userProfession: "Artist",
     },
@@ -48,7 +51,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Jane Smith",
       userProfession: "Artist",
     },
@@ -60,7 +64,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Jane Smith",
       userProfession: "Artist",
     },
@@ -72,7 +77,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Jane Smith",
       userProfession: "Artist",
     },
@@ -87,7 +93,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Alice Brown",
       userProfession: "Photographer",
     },
@@ -99,7 +106,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Bob Green",
       userProfession: "Sculptor",
     },
@@ -111,7 +119,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Alice Brown",
       userProfession: "Photographer",
     },
@@ -123,7 +132,8 @@ const PopularCollections = () => {
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
         "https://static.displate.com/280x392/displate/2024-10-07/4490aa6fbfe0802cfdebd11fd0f97d0e_88df431a1682695db97bed2e71b39701.jpg",
       ],
-      userImage: "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
+      userImage:
+        "https://static.displate.com/brand/layout/0c79b37b-b143-4532-8a0f-18a7c5320256/avatarRetina.jpg",
       userName: "Bob Green",
       userProfession: "Sculptor",
     },
@@ -137,7 +147,7 @@ const PopularCollections = () => {
     return data.map((card) => (
       <div
         key={card.id}
-        className="bg-white rounded-lg hover:border hover:shadow-lg p-4"
+        className="bg-white rounded-lg hover:border hover:border-[#d2d2d2] hover:shadow-lg p-4"
       >
         <div className="flex gap-2 mb-4">
           {card.images.map((img, index) => (

@@ -64,7 +64,7 @@ const HolidayDeals = () => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row max-w-7xl mx-auto bg-gray-50 my-4 md:my-6">
+    <div className="flex flex-col lg:flex-row max-w-7xl mx-auto bg-gray-50 gap-3 my-4 md:my-6">
       <div className="w-full lg:w-[70%] relative h-[500px]">
         <video
           autoPlay
@@ -103,7 +103,7 @@ const HolidayDeals = () => {
           {cardsData.map((card, index) => (
             <div
               key={index}
-              className="flex items-center space-x-4 p-4 border-b hover:bg-gray-100 transition"
+              className="flex items-center space-x-4 p-4 border-b border-[#d2d2d2] hover:bg-gray-100 transition"
             >
               <img
                 src={card.image}

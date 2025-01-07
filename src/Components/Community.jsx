@@ -31,7 +31,7 @@ const Community = () => {
           Excellent | Based on 15,261 reviewers
         </p>
         <div className="mt-7 md:mt-12">
-          <div className="mt-4 p-3 max-w-2xl mx-auto rounded-xl border shadow-xl flex flex-col lg:flex-row items-center justify-center space-x-4">
+          <div className="mt-4 p-3 max-w-2xl mx-auto rounded-xl shadow-xl flex flex-col lg:flex-row items-center justify-center space-x-4">
             <h2 className="text-lg font-semibold text-gray-800 mb-3">
               Join our Community on
             </h2>

@@ -198,7 +198,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className="max-w-[1250px] mx-auto">
-        <p className="text-xs text-gray-500 py-2 border-t border-gray-300">
+        <p className="text-xs text-gray-500 py-2 border-t border-[#d2d2d2]">
           © Displate. All Rights Reserved.
         </p>
       </div>

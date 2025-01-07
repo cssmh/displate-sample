@@ -3,7 +3,7 @@ import newsletter_discount from "../assets/newsletter_discount.avif";
 const Newsletter = () => {
   return (
     <div className="bg-white max-w-7xl mx-auto my-16">
-      <div className="flex flex-wrap lg:flex-nowrap items-center border shadow-lg rounded-lg overflow-hidden">
+      <div className="flex flex-wrap lg:flex-nowrap items-center shadow-lg rounded-lg overflow-hidden">
         <div className="w-full lg:w-1/2">
           <img
             src={newsletter_discount}
@@ -26,7 +26,7 @@ const Newsletter = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 p-3 rounded-l-lg border border-gray-300 focus:outline-none"
+              className="flex-1 p-3 rounded-l-lg border border-[#d2d2d2] focus:outline-none"
             />
             <button
               type="submit"

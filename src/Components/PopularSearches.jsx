@@ -8,7 +8,7 @@ const PopularSearches = () => {
 
   return (
     <div className="py-5 md:py-12 px-5">
-      <div className="border-b pb-2 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="border-b border-[#d2d2d2] pb-2 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <h2 className="text-lg font-bold text-gray-800 mb-4">Categories</h2>
           <ul className="space-y-2 text-gray-600">
@@ -211,10 +211,7 @@ const PopularSearches = () => {
         </div>
       </div>
       <div className="text-center mt-6">
-        <button
-          onClick={toggleShowMore}
-          className="text-[#1b8aee] font-bold"
-        >
+        <button onClick={toggleShowMore} className="text-[#1b8aee] font-bold">
           {showMore ? "Hide" : "Show More"}
         </button>
       </div>

@@ -57,7 +57,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Nick"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
+              className="w-full border border-[#d2d2d2] rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
             />
             <p className="text-xs text-gray-600">
               This will be your Displate Shop&apos;s name and URL.
@@ -71,7 +71,7 @@ const Register = () => {
           <input
             type="email"
             placeholder="E-mail"
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
+            className="w-full border border-[#d2d2d2] rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
           />
           <label htmlFor="password" className="block text-sm">
             Password
@@ -79,7 +79,7 @@ const Register = () => {
           <input
             type="password"
             placeholder="Password"
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
+            className="w-full border border-[#d2d2d2] rounded-md px-4 py-2 focus:outline-none focus:shadow-lg"
           />
           <div className="space-y-3 mt-2 text-sm">
             <p className="text-gray-600 flex items-center gap-1">
@@ -119,7 +119,7 @@ const Register = () => {
             <input
               type="checkbox"
               id="newsletter"
-              className="w-4 h-4 text-[#1185ed] border-gray-300 rounded focus:ring-[#1185ed]"
+              className="w-4 h-4 text-[#1185ed] border-[#d2d2d2] rounded focus:ring-[#1185ed]"
             />
             <label
               htmlFor="newsletter"
@@ -139,7 +139,7 @@ const Register = () => {
               <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 bg-white px-2 text-sm font-medium mx-auto w-max">
                 Or
               </span>
-              <div className="border-t border-gray-300"></div>
+              <div className="border-t border-[#d2d2d2]"></div>
             </div>
             <button className="w-full bg-white border text-[#1194f2] border-[#1194f2] flex items-center justify-center font-semibold gap-2 py-2 rounded-md">
               <FaGoogle />

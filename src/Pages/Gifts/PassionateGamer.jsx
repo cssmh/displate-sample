@@ -178,7 +178,7 @@ const PassionateGamer = () => {
             <a
               key={index}
               href={game.link}
-              className="block overflow-hidden rounded-lg border border-gray-300 hover:shadow-lg transition-shadow duration-300"
+              className="block overflow-hidden rounded-lg border border-[#d2d2d2] hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={game.image}
