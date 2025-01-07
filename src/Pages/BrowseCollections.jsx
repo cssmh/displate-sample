@@ -83,11 +83,8 @@ const BrowseCollections = () => {
         )}
         <Slider ref={sliderRef} {...sliderSettings}>
           {data.map((design) => (
-            <div
-              key={design.id}
-              className="px-3"
-            >
-              <div className="p-2 hover:shadow-2xl hover:border-none flex border flex-col items-center text-center">
+            <div key={design.id} className="px-3">
+              <div className="p-2 hover:shadow-2xl hover:border-none flex border border-[#d2d2d2] flex-col items-center text-center">
                 <div className="bg-white p-2">
                   <div className="flex items-center mb-4">
                     <img
@@ -119,7 +116,6 @@ const BrowseCollections = () => {
             </div>
           ))}
         </Slider>
-
         {currentSlide < data.length - 4 && (
           <button
             onClick={() => sliderRef.current.slickNext()}

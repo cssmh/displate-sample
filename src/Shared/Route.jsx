@@ -9,6 +9,9 @@ import SIgnin from "../Components/SIgnin";
 import CLub from "../Pages/CLub";
 import Register from "../Components/Register";
 import DisplateDetails from "../Pages/DisplateDetails/DisplateDetails";
+import BrowsePosters from "../Pages/BrowsePosters";
+import DiscoverBrands from "../Pages/DiscoverBrands";
+import WhatIsDisplate from "../Pages/WhatIsDisplate";
 
 const Route = createBrowserRouter([
   {
@@ -50,6 +53,18 @@ const Route = createBrowserRouter([
       {
         path: "/wishlist",
         element: <Wishlist />,
+      },
+      {
+        path: "/posters",
+        element: <BrowsePosters />,
+      },
+      {
+        path: "/browse-brands",
+        element: <DiscoverBrands />,
+      },
+      {
+        path: "/whats-a-displate",
+        element: <WhatIsDisplate />,
       },
     ],
   },

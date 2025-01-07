@@ -22,7 +22,7 @@ const Navbar = () => {
   const [isSubSidebarOpen, setSubSidebarOpen] = useState(false);
   const toggleSubSidebar = () => setSubSidebarOpen(!isSubSidebarOpen);
   const loc = useLocation();
-  
+
   const showOffer =
     loc.pathname === "/" ||
     loc.pathname === "/browse-collections" ||
@@ -137,7 +137,7 @@ const Navbar = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <button className="hover:text-blue-500">
-                    Browse Posters
+                    <Link to="/posters">Browse Posters</Link>
                   </button>
                   {isMegaMenuVisible && (
                     <div className="fixed text-left top-[114px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
@@ -220,29 +220,23 @@ const Navbar = () => {
                   )}
                 </div>
                 <Link
-                  to="/collections"
+                  to="/browse-collections"
                   className="hover:text-blue-500 transition duration-200 py-"
                 >
                   Collections
                 </Link>
                 <Link
-                  to="/discover-brands"
+                  to="/browse-brands"
                   className="hover:text-blue-500 transition duration-200"
                 >
                   Discover Brands
                 </Link>
-                <Link
-                  to="/limited-displates"
-                  className="hover:text-blue-500 transition duration-200"
-                >
+                <button className="hover:text-blue-500 transition duration-200">
                   Limited Displates
-                </Link>
-                <Link
-                  to="/accessories-gifts"
-                  className="hover:text-blue-500 transition duration-200"
-                >
+                </button>
+                <button className="hover:text-blue-500 transition duration-200">
                   Accessories & Gifts
-                </Link>
+                </button>
                 <Link
                   to="/whats-a-displate"
                   className="hover:text-blue-500 transition duration-200"
@@ -344,9 +338,11 @@ const Navbar = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="hover:text-blue-500">Browse Posters</button>
+              <button className="hover:text-blue-500">
+                <Link to="/posters">Browse Posters</Link>
+              </button>
               {isMegaMenuVisible && (
-                <div className="fixed text-left top-[118px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
+                <div className="fixed text-left top-[167px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
                   <div className="text-base">
                     <h3 className="font-bold mb-2">Passion</h3>
                     <ul className="space-y-2 text-black">
@@ -426,29 +422,23 @@ const Navbar = () => {
               )}
             </div>
             <Link
-              to="/collections"
+              to="/browse-collections"
               className="hover:text-blue-500 transition duration-200"
             >
               Collections
             </Link>
             <Link
-              to="/discover-brands"
+              to="/browse-brands"
               className="hover:text-blue-500 transition duration-200"
             >
               Discover Brands
             </Link>
-            <Link
-              to="/limited-displates"
-              className="hover:text-blue-500 transition duration-200"
-            >
+            <button className="hover:text-blue-500 transition duration-200">
               Limited Displates
-            </Link>
-            <Link
-              to="/accessories-gifts"
-              className="hover:text-blue-500 transition duration-200"
-            >
+            </button>
+            <button className="hover:text-blue-500 transition duration-200">
               Accessories & Gifts
-            </Link>
+            </button>
             <Link
               to="/whats-a-displate"
               className="hover:text-blue-500 transition duration-200"
@@ -474,7 +464,7 @@ const Navbar = () => {
             <FiX />
           </button>
         </div>
-        <div className="flex items-center p-4 border-b-2 text-gray-700">
+        <div className="flex items-center p-4 border-b-2 border-[#d2d2d2] text-gray-700">
           <FiUser className="text-xl mr-2" />
           <span className="font-medium">
             Hello!{" "}
@@ -491,21 +481,21 @@ const Navbar = () => {
           <Link
             to="/"
             onClick={toggleSidebar}
-            className="border-b-2 py-2 font-medium"
+            className="border-b-2 border-[#d2d2d2] py-2 font-medium"
           >
             Home
           </Link>
           {[
-            { path: "/browse-posters", label: "Browse Posters" },
-            { path: "/collections", label: "Collections" },
-            { path: "/discover-brands", label: "Discover Brands" },
-            { path: "/limited-displates", label: "Limited Displates" },
-            { path: "/accessories-gifts", label: "Accessories & Gifts" },
+            { path: "/posters", label: "Browse Posters" },
+            { path: "/browse-collections", label: "Collections" },
+            { path: "/browse-brands", label: "Discover Brands" },
+            { label: "Limited Displates" },
+            { label: "Accessories & Gifts" },
           ].map((route) => (
             <button
-              key={route.path}
+              key={route?.path}
               onClick={toggleSubSidebar}
-              className="flex items-center justify-between border-b-2 pb-3 font-medium w-full text-left"
+              className="flex items-center justify-between border-b-2 border-[#d2d2d2] pb-3 font-medium w-full text-left"
             >
               {route.label}
               <IoIosArrowForward className="text-2xl text-gray-500" />
@@ -514,14 +504,14 @@ const Navbar = () => {
           <Link
             to="/whats-a-displate"
             onClick={toggleSidebar}
-            className="border-b-2 pb-3 font-medium"
+            className="border-b-2 border-[#d2d2d2] pb-3 font-medium"
           >
             What&apos;s a Displate
           </Link>
           <Link
             to="/displate-club"
             onClick={toggleSidebar}
-            className="border-b-2 pb-3 font-medium"
+            className="border-b-2 border-[#d2d2d2] pb-3 font-medium"
           >
             Displate Club
           </Link>
@@ -532,7 +522,7 @@ const Navbar = () => {
             <button
               key={route.path}
               onClick={toggleSubSidebar}
-              className="flex items-center justify-between border-b-2 pb-3 font-medium w-full text-left"
+              className="flex items-center justify-between border-b-2 border-[#d2d2d2] pb-3 font-medium w-full text-left"
             >
               {route.label}
               <IoIosArrowForward className="text-2xl text-gray-500" />
@@ -541,7 +531,7 @@ const Navbar = () => {
           <Link
             to="/sell-your-art"
             onClick={toggleSidebar}
-            className="border-b-2 pb-3 font-medium"
+            className="border-b-2 border-[#d2d2d2] pb-3 font-medium"
           >
             Sell Your Art
           </Link>
@@ -566,7 +556,9 @@ const Navbar = () => {
         </div>
         <div className="py-4 text-gray-700">
           <div className="flex flex-col space-y-3 px-4 text-gray-700 mb-2">
-            <p className="border-b-2 font-bold py-2">Passion</p>
+            <p className="border-b-2 border-[#d2d2d2] font-bold py-2">
+              Passion
+            </p>
             {[
               { path: "/gaming", label: "Gaming" },
               { path: "/sports", label: "Sports" },
@@ -578,14 +570,16 @@ const Navbar = () => {
               <Link
                 key={route.path}
                 to={route.path}
-                className="flex items-center justify-between border-b-2 pb-3 font-medium w-full text-left"
+                className="flex items-center justify-between border-b-2 border-[#d2d2d2] pb-3 font-medium w-full text-left"
               >
                 {route.label}
               </Link>
             ))}
           </div>
           <div className="flex flex-col space-y-3 px-4 text-gray-700 mb-8">
-            <p className="border-b-2 font-bold py-2">Nature & Travel</p>
+            <p className="border-b-2 border-[#d2d2d2] font-bold py-2">
+              Nature & Travel
+            </p>
             {[
               { path: "/Maps", label: "Maps" },
               { path: "/Animals", label: "Animals" },
@@ -598,7 +592,7 @@ const Navbar = () => {
               <Link
                 key={route.path}
                 to={route.path}
-                className="flex items-center justify-between border-b-2 pb-3 font-medium w-full text-left"
+                className="flex items-center justify-between border-b-2 border-[#d2d2d2] pb-3 font-medium w-full text-left"
               >
                 {route.label}
               </Link>
