@@ -27,7 +27,7 @@ const Navbar = () => {
     loc.pathname === "/" ||
     loc.pathname === "/browse-collections" ||
     loc.pathname === "lp/gifts";
-
+  console.log(showOffer);
   const [isClubHoverVisible, setIsClubHoverVisible] = useState(false);
   const handleMouseEnterClub = () => setIsClubHoverVisible(true);
   const handleMouseLeaveClub = () => setIsClubHoverVisible(false);
@@ -137,7 +137,7 @@ const Navbar = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <button className="hover:text-blue-500">
-                    <Link to="/posters">Browse Posters</Link>
+                    <Link to="/posters?category=all">Browse Posters</Link>
                   </button>
                   {isMegaMenuVisible && (
                     <div className="fixed text-left top-[114px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
@@ -339,7 +339,7 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
             >
               <button className="hover:text-blue-500">
-                <Link to="/posters">Browse Posters</Link>
+                <Link to="/posters?category=all">Browse Posters</Link>
               </button>
               {isMegaMenuVisible && (
                 <div className="fixed text-left top-[167px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
@@ -486,7 +486,7 @@ const Navbar = () => {
             Home
           </Link>
           {[
-            { path: "/posters", label: "Browse Posters" },
+            { path: "/posters?category=all", label: "Browse Posters" },
             { path: "/browse-collections", label: "Collections" },
             { path: "/browse-brands", label: "Discover Brands" },
             { label: "Limited Displates" },
