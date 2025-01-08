@@ -9,7 +9,7 @@ import SIgnin from "../Components/SIgnin";
 import CLub from "../Pages/CLub";
 import Register from "../Components/Register";
 import DisplateDetails from "../Pages/DisplateDetails/DisplateDetails";
-import BrowsePosters from "../Pages/BrowsePosters";
+import BrowsePosters from "../Pages/BrowsePosters/BrowsePosters";
 import DiscoverBrands from "../Pages/DiscoverBrands";
 import WhatIsDisplate from "../Pages/WhatIsDisplate";
 
