@@ -4,9 +4,34 @@ import { FiChevronLeft, FiChevronRight, FiFilter } from "react-icons/fi";
 import Filters from "./Filters";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Posters from "./Posters";
+import Newsletter from "../../Components/Newsletter";
 
 const BrowsePosters = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showMore, setShowMore] = useState(false);
+
+  const routes = [
+    "Funny Motivational Posters",
+    "Vintage Circus Posters",
+    "Botanical Posters",
+    "Abstract Tree Artwork",
+    "Jazz Posters",
+    "Funny Graduation Posters",
+    "Apex Legends Posters",
+    "Dark Souls Posters",
+    "Abstract Space",
+    "Educational Posters",
+    "Black and White Posters",
+    "Wall Murals Posters",
+    "College Posters",
+    "Propaganda Posters",
+  ];
+
+  const handleSeeMoreClick = () => {
+    setShowMore(!showMore);
+  };
+
   const categories = [
     "Movie Posters",
     "Gaming & Video Game Posters",
@@ -82,7 +107,7 @@ const BrowsePosters = () => {
   };
 
   return (
-    <div className="max-w-[1300px] mx-auto">
+    <div className="max-w-7xl mx-auto">
       <div className="relative py-3">
         <div className="drawer drawer-end z-50 flex items-center justify-between">
           <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
@@ -167,6 +192,39 @@ const BrowsePosters = () => {
         src="https://cms-static-pages-assets.displate.com/SEARCH_BANNER_22_OFF_DESKTOP_d450815c45.jpg"
         alt=""
       />
+      <Posters />
+      <Newsletter />
+      <p className="w-[60%] mx-auto">
+        Shop for Posters & Art Prints - uniquely designed by talented artists
+        and printed on metal for superb quality and durability. Decorate your
+        home with Displates - beautiful art printed on metal, and make your
+        walls come to life with amazing Posters & Art Prints. Easy magnet
+        mounting, worldwide shipping. Buy premium quality Posters & Art Prints
+        online at DISPLATE.
+      </p>
+      <div className="my-8">
+        <h2 className="text-center text-3xl font-bold mb-6">
+          Popular Searches
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {routes.slice(0, showMore ? routes.length : 6).map((route, index) => (
+            <div
+              key={index}
+              className="bg-gray-100 text-center"
+            >
+              <p className="font-semibold text-sm">{route}</p>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-6">
+          <button
+            onClick={handleSeeMoreClick}
+            className="text-blue-600 hover:text-blue-800 font-semibold"
+          >
+            {showMore ? "See Less" : "See More"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
