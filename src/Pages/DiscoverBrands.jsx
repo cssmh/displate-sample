@@ -1,4 +1,7 @@
+import { FaCuttlefish, FaLongArrowAltUp } from "react-icons/fa";
 import band from "../assets/band.avif";
+import Newsletter from "../Components/Newsletter";
+import { Link } from "react-router-dom";
 
 const DiscoverBrands = () => {
   const fakeData = [
@@ -61,7 +64,7 @@ const DiscoverBrands = () => {
   ];
 
   return (
-    <div className="relative flex flex-col min-h-screen">
+    <div className="relative flex flex-col">
       <div
         className="relative w-full h-[200px] bg-cover bg-center"
         style={{ backgroundImage: `url(${band})` }}
@@ -101,36 +104,73 @@ const DiscoverBrands = () => {
           {fakeData.slice(0, 4).map((item) => (
             <div
               key={item.id}
-              className="relative bg-white rounded-lg overflow-hidden shadow-lg z-10 -mt-12"
+              className="group relative bg-white rounded-lg overflow-hidden shadow-lg z-10 -mt-12 transform transition duration-300 hover:scale-105"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110"
               />
               <div className="p-4">
                 <h2 className="text-xl font-semibold">{item.title}</h2>
-                <p className="text-gray-500">{item.artworks}</p>
+                <div className="flex justify-between items-center">
+                  <p className="text-gray-500">{item.artworks}</p>
+                  <button className="opacity-0 group-hover:opacity-100 text-[#3785ed] font-semibold">
+                    Follow +
+                  </button>
+                </div>
               </div>
             </div>
           ))}
           {fakeData.slice(4).map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-lg overflow-hidden shadow-lg"
+              className="group bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110"
               />
               <div className="p-4">
                 <h2 className="text-xl font-semibold">{item.title}</h2>
-                <p className="text-gray-500">{item.artworks}</p>
+                <div className="flex justify-between items-center">
+                  <p className="text-gray-500">{item.artworks}</p>
+                  <button className="opacity-0 group-hover:opacity-100 text-[#3785ed] font-semibold">
+                    Follow +
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
+      <Newsletter />
+      <div className="text-center space-y-3">
+        <p className="flex justify-center">
+          <FaCuttlefish size={60} />
+        </p>
+        <h1 className="text-4xl">You want them all?</h1>
+        <p className="font-semibold">
+          Join Displate Club and create your own, unique collection!
+        </p>
+        <p>
+          Enjoy free shipping, ongoing discounts, vinyl packaging and more.{" "}
+          <span className="font-semibold">
+            Get free Displates every 12 months, and give your home a new look!
+          </span>
+        </p>
+        <div className="mt-10">
+          <Link to="/join-displate-club" className="text-[#3785ed] font-bold">
+            Find out more
+          </Link>
+        </div>
+      </div>
+      <div className="flex justify-center mt-12">
+        <FaLongArrowAltUp size={30} className="text-[#5ff5e3]" />
+        <FaLongArrowAltUp size={30} className="text-[#5ff5e3]" />
+        <FaLongArrowAltUp size={30} className="text-[#5ff5e3]" />
+        <FaLongArrowAltUp size={30} className="text-[#5ff5e3]" />
       </div>
     </div>
   );
