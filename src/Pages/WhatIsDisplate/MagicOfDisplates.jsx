@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -24,44 +24,24 @@ const CustomNextArrow = (props) => (
 
 const MagicOfDisplates = () => {
   const videoData = [
-    {
-      id: 1,
-      title: "Displate Magic 1",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    {
-      id: 2,
-      title: "Displate Magic 2",
-      videoUrl: "https://www.w3schools.com/html/movie.mp4",
-    },
-    {
-      id: 3,
-      title: "Displate Magic 3",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    {
-      id: 4,
-      title: "Displate Magic 4",
-      videoUrl: "https://www.w3schools.com/html/movie.mp4",
-    },
-    {
-      id: 5,
-      title: "Displate Magic 5",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
+    { id: 1, videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { id: 2, videoUrl: "https://www.w3schools.com/html/movie.mp4" },
+    { id: 3, videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { id: 4, videoUrl: "https://www.w3schools.com/html/movie.mp4" },
+    { id: 5, videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4" },
   ];
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
     responsive: [
       {
-        breakpoint: 768, // For mobile screens
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -70,8 +50,23 @@ const MagicOfDisplates = () => {
     ],
   };
 
+  const [playingVideo, setPlayingVideo] = useState(null);
+
+  const togglePlayPause = (videoId) => {
+    const videoElement = document.getElementById(`video-${videoId}`);
+    const isCurrentlyPlaying = videoElement.paused;
+
+    if (isCurrentlyPlaying) {
+      videoElement.play();
+      setPlayingVideo(videoId);
+    } else {
+      videoElement.pause();
+      setPlayingVideo(null);
+    }
+  };
+
   return (
-    <div className="min-h-screen p-6 bg-gray-100">
+    <div className="min-h-screen p-6 bg-[#f4f4f4]">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-gray-800">
           See the magic of Displates
@@ -81,15 +76,18 @@ const MagicOfDisplates = () => {
         <Slider {...settings}>
           {videoData.map((item) => (
             <div key={item.id} className="p-4">
-              <div className="bg-white rounded-lg shadow-xl p-4">
+              <div className="bg-white rounded-lg shadow-xl relative">
                 <video
+                  id={`video-${item.id}`}
                   className="w-full h-40 rounded-lg"
-                  controls
                   src={item.videoUrl}
                 />
-                <h3 className="text-lg font-semibold text-center mt-2">
-                  {item.title}
-                </h3>
+                <button
+                  className="absolute inset-0 flex items-center justify-center rounded-lg text-white p-3"
+                  onClick={() => togglePlayPause(item.id)}
+                >
+                  {playingVideo === item.id ? "Pause" : "Play"}
+                </button>
               </div>
             </div>
           ))}

@@ -11,7 +11,7 @@ import Register from "../Components/Register";
 import DisplateDetails from "../Pages/DisplateDetails/DisplateDetails";
 import BrowsePosters from "../Pages/BrowsePosters/BrowsePosters";
 import DiscoverBrands from "../Pages/DiscoverBrands";
-import WhatIsDisplate from "../Pages/WhatIsDisplate";
+import WhatIsDisplate from "../Pages/WhatIsDisplate/WhatIsDisplate";
 
 const Route = createBrowserRouter([
   {
