@@ -1,7 +1,20 @@
+import { useState } from "react";
+
 const ChooseLooks = () => {
+  const [selectedFrame, setSelectedFrame] = useState("No Frame");
+
+  const frameColors = {
+    "No Frame": "",
+    "Black Wood Pattern": "border-black",
+    "White Wood Pattern": "border-white",
+    "Natural Wood Pattern": "border-yellow-600",
+    Graphite: "border-gray-700",
+  };
+
   return (
     <div className="p-6">
-      <div className="mb-8">
+      {/* Header */}
+      <div className="mb-8 text-center">
         <h1 className="text-4xl font-semibold text-gray-800">
           Choose how it looks
         </h1>
@@ -12,7 +25,13 @@ const ChooseLooks = () => {
         </p>
       </div>
       <div className="flex justify-center space-x-6 mt-10 items-end">
-        <div className="bg-gray-300 rounded-lg flex items-end justify-center h-32 w-28">
+        <div
+          className={`bg-gray-300 rounded-lg flex items-end justify-center h-32 w-28 ${
+            frameColors[selectedFrame]
+              ? `${frameColors[selectedFrame]} border-4`
+              : ""
+          }`}
+        >
           <a href="#">
             <img
               src="https://displate.com/img/what-a-displate/displate-m.png"
@@ -21,7 +40,13 @@ const ChooseLooks = () => {
             />
           </a>
         </div>
-        <div className="bg-gray-300 rounded-lg flex items-end justify-center h-48 w-40">
+        <div
+          className={`bg-gray-300 rounded-lg flex items-end justify-center h-48 w-40 ${
+            frameColors[selectedFrame]
+              ? `${frameColors[selectedFrame]} border-4`
+              : ""
+          }`}
+        >
           <a href="#">
             <img
               src="https://displate.com/img/what-a-displate/displate-l.png"
@@ -40,10 +65,10 @@ const ChooseLooks = () => {
           </a>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-7">
-        <div className="mt-3 justify-center flex gap-4 items-center text-center">
+      <div className="flex items-center justify-center gap-7 mt-6">
+        <div className="flex gap-4 items-center">
           <h2 className="text-xl">Finish:</h2>
-          <div className="flex justify-center items-center space-x-8">
+          <div className="flex space-x-8">
             <div className="flex items-center">
               <input
                 type="radio"
@@ -68,22 +93,38 @@ const ChooseLooks = () => {
               </label>
             </div>
           </div>
-          <p className="ml-10">Finish: Matte</p>
         </div>
       </div>
-      <div className="mt-10">
+      <div className="mt-5 flex justify-center items-center gap-5 text-center">
         <h2 className="text-xl font-semibold text-gray-800">Frame:</h2>
         <div className="flex justify-center space-x-4 mt-4">
-          <div className="w-20 h-20 border-2 border-gray-500 rounded-lg flex justify-center items-center bg-gray-200 hover:border-gray-600">
-            <div className="w-12 h-12 bg-gray-700 rounded-md"></div>
-          </div>
-          <div className="w-20 h-20 border-2 border-gray-500 rounded-lg flex justify-center items-center bg-gray-200 hover:border-gray-600">
-            <div className="w-12 h-12 bg-gray-900 rounded-md"></div>
-          </div>
-          <div className="w-20 h-20 border-2 border-gray-500 rounded-lg flex justify-center items-center bg-gray-200 hover:border-gray-600">
-            <div className="w-12 h-12 bg-gray-600 rounded-md"></div>
-          </div>
+          {[
+            { name: "No Frame", color: "bg-gray-200" },
+            { name: "Black Wood Pattern", color: "bg-black" },
+            { name: "White Wood Pattern", color: "bg-white" },
+            { name: "Natural Wood Pattern", color: "bg-yellow-600" },
+            { name: "Graphite", color: "bg-gray-700" },
+          ].map((frame) => (
+            <div
+              key={frame.name}
+              onClick={() => setSelectedFrame(frame.name)}
+              className={`w-16 h-16 border rounded-lg flex justify-center items-center ${
+                selectedFrame === frame.name
+                  ? "border-blue-500"
+                  : "border-gray-500 hover:border-gray-600"
+              }`}
+            >
+              <div
+                className={`w-full h-full rounded-md ${frame.color} ${
+                  frame.color === "bg-white" ? "border border-gray-500" : ""
+                }`}
+              ></div>
+            </div>
+          ))}
         </div>
+        <p>
+          Frame: <span className="font-bold">No frame</span>
+        </p>
       </div>
     </div>
   );

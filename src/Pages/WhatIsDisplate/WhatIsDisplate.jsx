@@ -3,6 +3,8 @@ import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import CanvasRule from "./CanvasRule";
 import MagicOfDisplates from "./MagicOfDisplates";
 import ChooseLooks from "./ChooseLooks";
+import GetInFrame from "./GetInFrame";
+import HomeArtists from "./HomeArtists";
 
 const WhatIsDisplate = () => {
   const videoRef = useRef(null);
@@ -121,6 +123,8 @@ const WhatIsDisplate = () => {
       <CanvasRule />
       <MagicOfDisplates />
       <ChooseLooks />
+      <GetInFrame />
+      <HomeArtists />
     </div>
   );
 };
