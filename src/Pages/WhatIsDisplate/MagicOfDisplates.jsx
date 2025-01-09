@@ -66,7 +66,7 @@ const MagicOfDisplates = () => {
   };
 
   return (
-    <div className="min-h-screen p-6 bg-[#f4f4f4]">
+    <div className="p-6 bg-[#f4f4f4]">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-gray-800">
           See the magic of Displates
