@@ -5,6 +5,7 @@ import MagicOfDisplates from "./MagicOfDisplates";
 import ChooseLooks from "./ChooseLooks";
 import GetInFrame from "./GetInFrame";
 import HomeArtists from "./HomeArtists";
+import StartCollecting from "./StartCollecting";
 
 const WhatIsDisplate = () => {
   const videoRef = useRef(null);
@@ -125,6 +126,7 @@ const WhatIsDisplate = () => {
       <ChooseLooks />
       <GetInFrame />
       <HomeArtists />
+      <StartCollecting />
     </div>
   );
 };

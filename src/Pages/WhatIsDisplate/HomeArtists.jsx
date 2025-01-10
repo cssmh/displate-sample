@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const CustomPrevArrow = (props) => (
   <button
@@ -21,7 +22,7 @@ const CustomNextArrow = (props) => (
 
 const HomeArtists = () => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -59,64 +60,80 @@ const HomeArtists = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl font-semibold text-gray-800 mb-6">
+    <div className="max-w-7xl mx-auto my-8">
+      <h2 className="text-3xl font-semibold text-gray-800 mb-4 text-center">
         Home of Genuine Artists
       </h2>
       <Slider {...settings}>
         {artists.map((artist, index) => (
-          <div key={index} className="flex items-center gap-6 px-4">
-            {/* Left Section */}
-            <div className="flex justify-center">
-              <div className="flex flex-col mx-auto gap-4 w-full md:w-1/2">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={artist.userImage}
-                    alt={artist.name}
-                    className="w-12 h-12 rounded-full"
-                  />
-                  <div>
-                    <p className="font-bold text-lg text-gray-700">
-                      {artist.name}
-                    </p>
-                    <p className="text-sm text-gray-500">{artist.displate}</p>
+          <div key={index} className="flex justify-center items-center py-8">
+            <div className="flex flex-col md:flex-row items-center gap-6 px-4">
+              <div className="flex flex-col mx-auto gap-4 w-full">
+                <div className="space-y-5 border-r border-[#d2d2d2]">
+                  <div className="flex justify-between">
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={artist.userImage}
+                        alt={artist.name}
+                        className="w-16 h-16 border-2 border-[#08efd3] p-1 rounded-full"
+                      />
+                      <div>
+                        <p className="font-bold hover:underline text-xl text-gray-700">
+                          {artist.name}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          {artist.displate}
+                        </p>
+                      </div>
+                      <Link className="font-semibold text-[#3698f0]">
+                        See more from this artist
+                      </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="flex gap-2 flex-wrap">
-                  {artist.bottomImages.map((img, imgIndex) => (
-                    <img
-                      key={imgIndex}
-                      src={img}
-                      alt={`Artwork ${imgIndex + 1}`}
-                      className="w-20 h-20 rounded-md object-cover"
-                    />
-                  ))}
+                  <div className="flex gap-2 flex-wrap justify-center">
+                    {artist.bottomImages.map((img, imgIndex) => (
+                      <img
+                        key={imgIndex}
+                        src={img}
+                        alt={`Artwork ${imgIndex + 1}`}
+                        className="w-36 h-44 rounded-md object-cover"
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
-              {/* Right Section */}
-              <div className="flex flex-col gap-4 w-full md:w-1/2">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={artist.userImage}
-                    alt={artist.name}
-                    className="w-12 h-12 rounded-full"
-                  />
-                  <div>
-                    <p className="font-bold text-lg text-gray-700">
-                      {artist.name}
-                    </p>
-                    <p className="text-sm text-gray-500">{artist.displate}</p>
+              <div className="flex flex-col mx-auto gap-4 w-full">
+                <div className="space-y-5">
+                  <div className="flex justify-between">
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={artist.userImage}
+                        alt={artist.name}
+                        className="w-16 h-16 border-2 border-[#08efd3] p-1 rounded-full"
+                      />
+                      <div>
+                        <p className="font-bold hover:underline text-xl text-gray-700">
+                          {artist.name}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          {artist.displate}
+                        </p>
+                      </div>
+                    </div>
+                    <Link className="font-semibold text-[#3698f0]">
+                      See more from this artist
+                    </Link>
                   </div>
-                </div>
-                <div className="flex gap-2 flex-wrap">
-                  {artist.bottomImages.map((img, imgIndex) => (
-                    <img
-                      key={imgIndex}
-                      src={img}
-                      alt={`Artwork ${imgIndex + 1}`}
-                      className="w-20 h-20 rounded-md object-cover"
-                    />
-                  ))}
+                  <div className="flex gap-2 flex-wrap justify-center">
+                    {artist.bottomImages.map((img, imgIndex) => (
+                      <img
+                        key={imgIndex}
+                        src={img}
+                        alt={`Artwork ${imgIndex + 1}`}
+                        className="w-36 h-44 rounded-md object-cover"
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
