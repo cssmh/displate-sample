@@ -6,6 +6,7 @@ import ChooseLooks from "./ChooseLooks";
 import GetInFrame from "./GetInFrame";
 import HomeArtists from "./HomeArtists";
 import StartCollecting from "./StartCollecting";
+import { Link } from "react-router-dom";
 
 const WhatIsDisplate = () => {
   const videoRef = useRef(null);
@@ -127,6 +128,23 @@ const WhatIsDisplate = () => {
       <GetInFrame />
       <HomeArtists />
       <StartCollecting />
+      <div className="flex justify-between items-center max-w-7xl mx-auto my-7">
+        <div>
+          <h1 className="text-4xl font-semibold mb-5">
+            Find a Displate you love!
+          </h1>
+          <Link
+            to="/posters?category=all"
+            className="bg-[#1185ed] px-12 py-2 font-semibold text-lg text-white rounded-md"
+          >
+            See all posters
+          </Link>
+        </div>
+        <img
+          src="https://displate.com/img/what-a-displate/search_image2.png"
+          alt=""
+        />
+      </div>
     </div>
   );
 };
