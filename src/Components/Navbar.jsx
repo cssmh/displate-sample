@@ -16,7 +16,9 @@ import { FaCuttlefish, FaRegCheckCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [isMegaMenuVisible, setIsMegaMenuVisible] = useState(false);
+  const [isMegaMenuBrowse, setIsMegaMenuBrowse] = useState(false);
+  const [isMegaMenuLimited, setIsMegaMenuLimited] = useState(false);
+  const [isMegaMenuAccessories, setIsMegaMenuAccessories] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [isSubSidebarOpen, setSubSidebarOpen] = useState(false);
@@ -39,12 +41,28 @@ const Navbar = () => {
     setInputValue(e.target.value);
   };
 
-  const handleMouseEnter = () => {
-    setIsMegaMenuVisible(true);
+  const handleMouseEnterBrowse = () => {
+    setIsMegaMenuBrowse(true);
   };
 
-  const handleMouseLeave = () => {
-    setIsMegaMenuVisible(false);
+  const handleMouseLeaveBrowse = () => {
+    setIsMegaMenuBrowse(false);
+  };
+
+  const handleMouseEnterLimited = () => {
+    setIsMegaMenuLimited(true);
+  };
+
+  const handleMouseLeaveLimited = () => {
+    setIsMegaMenuLimited(false);
+  };
+
+  const handleMouseEnterAccessories = () => {
+    setIsMegaMenuAccessories(true);
+  };
+
+  const handleMouseLeaveAccessories = () => {
+    setIsMegaMenuAccessories(false);
   };
 
   const handleScroll = () => {
@@ -133,13 +151,13 @@ const Navbar = () => {
               <div className="container mx-auto flex justify-center space-x-6 text-gray-700 text-sm font-medium">
                 <div
                   className="relative"
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseEnter={handleMouseEnterBrowse}
+                  onMouseLeave={handleMouseLeaveBrowse}
                 >
                   <button className="hover:text-blue-500">
                     <Link to="/posters?category=all">Browse Posters</Link>
                   </button>
-                  {isMegaMenuVisible && (
+                  {isMegaMenuBrowse && (
                     <div className="fixed text-left top-[114px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
                       <div className="text-base">
                         <h3 className="font-bold mb-2">Passion</h3>
@@ -231,12 +249,99 @@ const Navbar = () => {
                 >
                   Discover Brands
                 </Link>
-                <button className="hover:text-blue-500 transition duration-200">
-                  Limited Displates
-                </button>
-                <button className="hover:text-blue-500 transition duration-200">
-                  Accessories & Gifts
-                </button>
+                <div
+                  className="relative"
+                  onMouseEnter={handleMouseEnterLimited}
+                  onMouseLeave={handleMouseLeaveLimited}
+                >
+                  <button className="hover:text-blue-500">
+                    Limited Displates
+                  </button>
+                  {isMegaMenuLimited && (
+                    <div className="fixed text-left top-[114px] left-0 w-full bg-white shadow-2xl p-7">
+                      <div className="max-w-2xl mx-auto flex justify-center gap-10">
+                        <div className="space-y-2">
+                          <h1 className="text-3xl font-semibold">
+                            Limited Editions
+                          </h1>
+                          <p className="text-base">Packed with extra flair</p>
+                          <p>
+                            State-of-the-art metal posters crafted for the most
+                            demanding collectors. Each piece is produced in
+                            limited quantities.
+                          </p>
+                          <p>
+                            Featuring exclusive designs enhanced with 3D print
+                            effects and unique print details.
+                          </p>
+                          <p>
+                            individually numbered, and certified for
+                            authenticity. Don&apos;t miss your chance to own
+                            one!
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-6">
+                          <img
+                            className="h-48 w-80"
+                            src="https://static.displate.com/230x320/displate/2024-11-06/27c494dc5fee5ab78ab2b302c608db40_695143690b63d64ae618103abae0dc2f.avif"
+                            alt="img"
+                          />
+                          <img
+                            className="h-48 w-80"
+                            src="https://static.displate.com/230x320/displate/2022-11-24/6fe5f68a13cfe96c8eef8f96a45083a9_c96091ab7ed30498d1ae6e35f22b63a9.avif"
+                            alt="img"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div
+                  className="relative"
+                  onMouseEnter={handleMouseEnterAccessories}
+                  onMouseLeave={handleMouseLeaveAccessories}
+                >
+                  <button className="hover:text-blue-500">
+                    Accessories & Gifts
+                  </button>
+                  {isMegaMenuAccessories && (
+                    <div className="fixed text-left top-[114px] left-0 w-full bg-white shadow-2xl p-7">
+                      <div className="max-w-2xl mx-auto flex items-center justify-center gap-10">
+                        <div className="space-y-2">
+                          <h1 className="text-3xl font-semibold">
+                            Displate accessories
+                          </h1>
+                          <p className="text-base">
+                            For all your non-printed needs
+                          </p>
+                          <p>
+                            From magnet-mounting your Displates, to making
+                            selected artworks pop. We have some accessories to
+                            satisfy first-timers and big collectors alike.
+                          </p>
+                          <p>Get your spare magnets here!</p>
+                        </div>
+                        <div className="flex items-center gap-6">
+                          <img
+                            className="h-56 w-96"
+                            src="https://static.displate.com/230x320/displate/2024-02-05/367b3c9c9c3db3d9b026a6317d9626e2_2e0dce6cd98ac509a71c9f6e7e72d162.avif"
+                            alt="img"
+                          />
+                          <img
+                            className="h-56 w-96"
+                            src="https://static.displate.com/230x320/displate/2024-08-03/68a8889185b68cc85f4511738d15280d_3e265df048f8d72c13b4e111a2f33e38.avif"
+                            alt="img"
+                          />
+                          <img
+                            className="h-56 w-96"
+                            src="https://static.displate.com/230x320/displate/2022-12-20/e6c57665aaa6ca18eaf471290a10865a_841f39a22e173b4ed526960d3cb26158.avif"
+                            alt="img"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <Link
                   to="/whats-a-displate"
                   className="hover:text-blue-500 transition duration-200"
@@ -335,13 +440,13 @@ const Navbar = () => {
           <div className="container mx-auto flex justify-center space-x-6 text-gray-700 text-sm font-medium">
             <div
               className="relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={handleMouseEnterBrowse}
+              onMouseLeave={handleMouseLeaveBrowse}
             >
               <button className="hover:text-blue-500">
                 <Link to="/posters?category=all">Browse Posters</Link>
               </button>
-              {isMegaMenuVisible && (
+              {isMegaMenuBrowse && (
                 <div className="fixed text-left top-[167px] left-0 w-full bg-white shadow-2xl p-11 grid grid-cols-7 gap-6">
                   <div className="text-base">
                     <h3 className="font-bold mb-2">Passion</h3>
@@ -433,12 +538,96 @@ const Navbar = () => {
             >
               Discover Brands
             </Link>
-            <button className="hover:text-blue-500 transition duration-200">
-              Limited Displates
-            </button>
-            <button className="hover:text-blue-500 transition duration-200">
-              Accessories & Gifts
-            </button>
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnterLimited}
+              onMouseLeave={handleMouseLeaveLimited}
+            >
+              <button className="hover:text-blue-500">Limited Displates</button>
+              {isMegaMenuLimited && (
+                <div className="fixed text-left top-[167px] left-0 w-full bg-white shadow-2xl p-7">
+                  <div className="max-w-2xl mx-auto flex justify-center gap-10">
+                    <div className="space-y-2">
+                      <h1 className="text-3xl font-semibold">
+                        Limited Editions
+                      </h1>
+                      <p className="text-base">Packed with extra flair</p>
+                      <p>
+                        State-of-the-art metal posters crafted for the most
+                        demanding collectors. Each piece is produced in limited
+                        quantities.
+                      </p>
+                      <p>
+                        Featuring exclusive designs enhanced with 3D print
+                        effects and unique print details.
+                      </p>
+                      <p>
+                        individually numbered, and certified for authenticity.
+                        Don&apos;t miss your chance to own one!
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-6">
+                      <img
+                        className="h-56 w-96"
+                        src="https://static.displate.com/230x320/displate/2024-11-06/27c494dc5fee5ab78ab2b302c608db40_695143690b63d64ae618103abae0dc2f.avif"
+                        alt="img"
+                      />
+                      <img
+                        className="h-56 w-96"
+                        src="https://static.displate.com/230x320/displate/2022-11-24/6fe5f68a13cfe96c8eef8f96a45083a9_c96091ab7ed30498d1ae6e35f22b63a9.avif"
+                        alt="img"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnterAccessories}
+              onMouseLeave={handleMouseLeaveAccessories}
+            >
+              <button className="hover:text-blue-500">
+                Accessories & Gifts
+              </button>
+              {isMegaMenuAccessories && (
+                <div className="fixed text-left top-[167px] left-0 w-full bg-white shadow-2xl p-7">
+                  <div className="max-w-2xl mx-auto flex items-center justify-center gap-10">
+                    <div className="space-y-2">
+                      <h1 className="text-3xl font-semibold">
+                        Displate accessories
+                      </h1>
+                      <p className="text-base">
+                        For all your non-printed needs
+                      </p>
+                      <p>
+                        From magnet-mounting your Displates, to making selected
+                        artworks pop. We have some accessories to satisfy
+                        first-timers and big collectors alike.
+                      </p>
+                      <p>Get your spare magnets here!</p>
+                    </div>
+                    <div className="flex items-center gap-6">
+                      <img
+                        className="h-56 w-96"
+                        src="https://static.displate.com/230x320/displate/2024-02-05/367b3c9c9c3db3d9b026a6317d9626e2_2e0dce6cd98ac509a71c9f6e7e72d162.avif"
+                        alt="img"
+                      />
+                      <img
+                        className="h-56 w-96"
+                        src="https://static.displate.com/230x320/displate/2024-08-03/68a8889185b68cc85f4511738d15280d_3e265df048f8d72c13b4e111a2f33e38.avif"
+                        alt="img"
+                      />
+                      <img
+                        className="h-56 w-96"
+                        src="https://static.displate.com/230x320/displate/2022-12-20/e6c57665aaa6ca18eaf471290a10865a_841f39a22e173b4ed526960d3cb26158.avif"
+                        alt="img"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
             <Link
               to="/whats-a-displate"
               className="hover:text-blue-500 transition duration-200"
